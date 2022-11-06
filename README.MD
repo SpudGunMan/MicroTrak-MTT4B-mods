@@ -75,7 +75,9 @@ Following is for temp return in F added the additional sensor into battery2 as v
    - EQNS. `Volts`  **,**  `Deg`   **,**  `Chan3-AUX`
  - BITS line describes the digital telemetry (not used **but can we feed into PIC PIN-11**), followed by the project name for the telemetry or operation or kit
 
-### The EQNS voltage `0,0.0293,0` is calculated in the following way. 
+### The EQNS voltage
+The volts `0,0.0293,0` is calculated in the following way. 
+
 - Since the supply voltage is fed through a 10K & 2K voltage divider, the voltage presented to PIC
   - Input supply voltage (commonly 12v) passes the voltage divider 2K/(10K+2K) or 1/6 `0.0293` the supply voltage. 
   - The PIC analog read value is a number between 0 (for 0 volts) and 1023 resolution (for 5 volts PIC reference).
@@ -87,7 +89,9 @@ Following is for temp return in F added the additional sensor into battery2 as v
 ![eqns](eqns.jpg)
 APRS.org document snip with red text overlay showing this device values.
 
-### The EQNS Temp `0,0.879,-­459.67`F or `0,0.489,-­273.15`C is calculated in the following way.
+### The EQNS temp
+The EQNS Temp `0,0.879,-­459.67`F or `0,0.489,-­273.15`C is calculated in the following way.
+
 - The temperature sensor analog-8 reports 10mV / deg K, and deg F = deg K * 9/5 – 459.67
   - LM-355 voltage (5V/1023) / 0.01V multiplied by 9/5 = 0.879 then 459.67 is subtracted
 - For Celsius, (deg C == deg K – 273.15) 
