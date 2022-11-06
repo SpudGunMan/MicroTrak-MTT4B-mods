@@ -104,8 +104,8 @@ T Packets https://aprs.fi/telemetry/a/N0CALL
 16F1827 [PIC41391D](41391D.pdf)
 
 ## Findu quicklinks for scripting into automation
- - POST into www.findu.com/cgi-bin/sendmsg.cgi?fromcall=N0CALL&tocall=N0CALL&msg=EQNS.0%2C0.0293%2C0%2C0%2C0.879%2C-459.67
- - pre filled form, www.findu.com/cgi-bin/entermsg.cgi?fromcall=N0CALL-9&tocall=N0CALL
+ - POST into `http://www.findu.com/cgi-bin/sendmsg.cgi?fromcall=N0CALL&tocall=N0CALL&msg=EQNS.0%2C0.0293%2C0%2C0%2C0.879%2C-459.67`
+ - pre filled form `www.findu.com/cgi-bin/entermsg.cgi?fromcall=N0CALL-9&tocall=N0CALL`
  - sniff the db http://www.findu.com/cgi-bin/msg.cgi?call=*
 
 More on EQNS on page 70 Telemetry starts a little back on 68 of the [APRS whitepapers](http://www.aprs.org/doc/APRS101.PDF)
