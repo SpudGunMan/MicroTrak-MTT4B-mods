@@ -100,6 +100,12 @@ The EQNS Temp `0,0.879,-­459.67`F or `0,0.489,-­273.15`C is calculated in the 
   - LM-355 voltage(5V/1023) / 0.01V = 0.489 and then 273.15 is subtracted.
 
 
+## Notes
+ - TinyTrak firmware takes in NMEA serial GPS data, and sends out APRS formatted position packets
+ - WXTrak firmware takes in serial data from a weather station and sends out APRS weather packets
+ - TinyPack firmware takes in any serial text terminated with carriage return, and sends that as a UI packet. It is used to do custom transmissions, plus works with the Davis weather stations that send out APRS strings natively.
+
+
 # Reference material
 T Packets https://aprs.fi/telemetry/a/N0CALL
 
