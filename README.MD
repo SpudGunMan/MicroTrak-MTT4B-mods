@@ -105,6 +105,10 @@ T Packets https://aprs.fi/telemetry/a/N0CALL
 
 16F1827 [PIC41391D](41391D.pdf)
 
+Wx serial [data](https://www.peetbros.com/shop/custom.aspx?recid=29)
+
+todo: find serial specs for the WX200 / WM918
+
 ## Findu quicklinks for scripting into automation
  - POST into `http://www.findu.com/cgi-bin/sendmsg.cgi?fromcall=N0CALL&tocall=N0CALL&msg=EQNS.0%2C0.0293%2C0%2C0%2C0.879%2C-459.67`
  - pre filled form `www.findu.com/cgi-bin/entermsg.cgi?fromcall=N0CALL-9&tocall=N0CALL`
