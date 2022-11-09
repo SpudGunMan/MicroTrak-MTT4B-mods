@@ -128,4 +128,8 @@ APRS Telemetry [note](http://he.fi/doc/aprs-base91-comment-telemetry.txt) for Ba
 
 [reference](https://github.com/PhirePhly/aprs_notes/blob/master/telemetry_format.md) on telemetry format
 
+Bash telemetry blog posts
+- https://s55ma.radioamater.si/2017/07/27/send-aprs-objects-or-telemetry-via-bash/
+- https://s55ma.radioamater.si/2017/07/27/send-aprs-datatelemetry-via-xastir-command-line/
+
 
