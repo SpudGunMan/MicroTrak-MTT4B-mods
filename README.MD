@@ -44,6 +44,7 @@ Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwo
 ### PS2, LCD header,  
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
  - Recomend a "real" ps/2 keyboard. 
+ - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
 
 ### VCC, SIG, GND
 
