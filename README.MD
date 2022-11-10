@@ -22,6 +22,10 @@ Now that was a mouthfull and to say. not leaving out the TT4 Quick Start [Guide]
 
 Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
 
+In addition to the reading, make sure to buy the following cables in addition to a GPS, USB-25mm, and a TT-USB, it comes with a PP-RTG which a GPS or null modem PC will connect to. PP-RTG cable which will connect 12v and GPS.
+
+See the RTG for notes of GPS
+
 ## Ports
 
 ### PORT B, the DB-9 
@@ -41,7 +45,7 @@ Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwo
 
 ***Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power***
 
-### PS2, LCD header,  
+### PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
  - Recomend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
