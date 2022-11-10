@@ -74,6 +74,8 @@ Flashing is done via binary mode of a terminal emulator
 
 # References
  - http://aprs.org/satt4.html
+ - https://opensource.com/article/18/3/how-configure-aprs-igate-raspberry-pi
+ - https://github.com/trasukg/share-tnc
  
 
 
