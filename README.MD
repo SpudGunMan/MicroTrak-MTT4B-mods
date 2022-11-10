@@ -49,17 +49,30 @@ enter the data into [findu entermsg tool](http://www.findu.com/cgi­bin/entermsg
 the “SW” and “T” markings are reversed. “T” is the secondary configuration switch input, and “SW” is the analog telemetry input photo here shows functioning connections to the hardware. jumpers used to extend the telemetry port externally when used.
 
 ## Adding sensors
+
+### VCC
 Tap +5vcc directly off the 5 Volt regulator's output pin. (***Note*** that there is a 12 Volt regulator too...don't tap that one!!) it is not recomended to use the DB9 GPS power.
 
+### SIGnal
 Again note, the T and S markings are reversed, so "S screenprint" is for the telemetry input. S is for switch see photo above and notice where the wires travel to make this clear. 
 - There is a ground connection at 2mm spacing. 
 - We will call it the T/telemetry line and not reference the screenprints.
 
 This telemetry line feeds the device (PIC/RB6/13 "pin11") analog 5vREF, PULL-UP
 
-Being a pull-up line we also need to reference to the vcc and we additionally want some protection on this line. Depending on your sensor this varies the temp sensors for example are using a 00k resistor, and the volts are using a 2.2k resistor see more in the EQNS section for why calculations are needed for this resistor.
+Being a ***pull-up*** we also need to reference to the vcc and we additionally want some protection on this Signal for current limiting. 
 
-So we now have VCC and SIG and GND which means we have enough to process an analog signal.
+Depending on your sensor this varies the temp sensors for example are using a 00k resistor, and the volts are using a 2.2k resistor see more in the EQNS section for why calculations are needed for this resistor.
+
+### GND
+There is a ground connection at 2mm spacing headers, this is uncommon spacing.
+
+## CDS Photo Sensor
+Example of a simple and fun addition to the device.
+
+![cds](cds-circuit.png)
+
+TODO: show EQNS
 
 ## Software changes
 
