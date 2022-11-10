@@ -41,12 +41,15 @@ Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwo
 
 ***Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power***
 
-Note that +5 is also available on JP9. ( The square hole is positive, violating all laws of god and man) But I suggest avoiding that pin, since you may want to install a jack for use with a Byonics ( Or homemade) LCD/Keyboard display adapter. This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. A warning note is that USB keyboards with a PS/2 adapter may or may not work ( Mostly not) You need a "real" ps/2 keyboard. 
+### PS2, LCD header,  
+Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
+ - Recomend a "real" ps/2 keyboard. 
 
 ### VCC, SIG, GND
 
 RAW DATA NOTHING VERIVIED YET
 
+Note that +5 is also available on JP9. ( The square hole is positive, violating all laws of god and man) But I suggest avoiding that pin, 
 
 MTT4BT, you can tap +5 from pin 2 of J3.  Pin 1, the square pad, is ground. Note that although it looks like this pin is connected through a limiting resistor, it is not, it is connected directly to the switched 5 Volt regulators output. The resistor connecting to it is the bias for D3, the LM335 Temperature sensor.
 
