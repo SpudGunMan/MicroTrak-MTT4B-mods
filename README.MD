@@ -56,7 +56,7 @@ Device runs at 19200baud
 
 The TEST44 is a bench-test ID entered during testing. If you did not request that Byon program your MTT4BT prior to shipping, it has that test callsign or the default NOCALL entered as callsigns entered in the main bank. 
 
- - The config [software](bin/TinyTrak4Config/TinyTrak4 Alpha Config v0.68.exe) is inside the TinyTrak4_Alpha_Firmware***_v0.68.zip***
+ - The binary config [software](bin/TinyTrak4Config/TinyTrak4AlphaConfigv0.68.exe) is inside the Firmware v0.68.zip
  - Additionally you can just program like a classic TNC via text
    - config save files are just variable dump
 
