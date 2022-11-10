@@ -1,5 +1,5 @@
 # Micro­Trak RTG -FA
-frequency agile VFO Micro­Trak RTG APRS Beacon hardware. The MicroTrak tracker line combines the TinyTrak controller with a supplied GPS and built in transmitter
+Micro­Trak RTG APRS tracker/Beacon hardware. The MicroTrak tracker line combines the TinyTrak controller with a supplied GPS and built in 10-watt frequency agile VFO / 2-meter (144 MHz - 148 MHz)transmitter. built in telemetry support to transmit supply voltage and temperature more details here..
 
 ## Getting Started
 
@@ -11,6 +11,11 @@ The other item to be sure to have is cables TT-USB and a PP-RTG /+null one or al
  - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. To keep this isolated recomend using the manufacture cables which are all labled.
  - You can use the PP-RTG with your own injected ~8v/12v and a null modem cable or adapter to your computer serial. If you power it to 12v ***have a RF load connected.***
  - You can use the TT-USB to the device directly nothing else needed, watch your port current, suggest a hub.
+
+ ### Connection antenna
+ The full ready to go kit, includes a magmount, SMA-M 2m antenna with about 6 foot of coax. The antenna will likley be damaged in shipping and its base can use a spot of goralla glue, as it will break. It works, its retail-shipped price is around $30 in 2022-USD, to be clear..  its a $5 antenna you will use for too long, or never. They also sell a v6 dipole that is about the size of your hand. I wouldnt recomend, use your own magmount or ladder Jpole for terestrial work. the stuff they up-sell works but its not worth the value long term. Antenna is not weather rated at all, dont leave in rain, at minimal crack open the base, and fill it with glue to waterproof this cavity and keep magnent inside.
+
+ ## Reading material beyond here
 
 The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions.
 
