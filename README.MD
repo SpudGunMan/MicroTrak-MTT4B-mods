@@ -18,7 +18,7 @@ Kicking it off!
 
  - after you consumed all that font forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) for further details on the parts not covered in the others... whew!
 
-Now that was a mouthfull and to say. not leaving out the Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf)
+Now that was a mouthfull and to say. not leaving out the TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) and any aprs '101' EQNS and such.. compiled [here](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
 
 Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
 
