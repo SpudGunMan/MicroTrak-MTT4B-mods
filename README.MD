@@ -4,16 +4,16 @@ Micro­Trak RTG APRS tracker/Beacon hardware. The MicroTrak tracker line combine
 ## Getting Started
 
 ### GPS
-Likely best to buy the one they sell (of which there are two, mentions one has better altimiter screen printed on top visually) its a very nice [chip](https://www.mouser.com/new/lantronix/lantronix-sirfstar-iv-modules/). The MicroTrak's requires 'serial standard NEMA', not newer chip/sentances, they have a GUA cable or a USB to GPS cable to power the  factory GPS directly to PC which is recomended for using a pi to fiddle with the data, watch your port current a hub is recomended. The factory chip is fast and has nice bootup includes some fancy technology.
+Likely best to buy the one they sell (of which there are two, mentions one has better altimeter screen printed on top visually) its a very nice [chip](https://www.mouser.com/new/lantronix/lantronix-sirfstar-iv-modules/). The MicroTrak's requires 'serial standard NEMA', not newer chip/sentences, they have a GUA cable or a USB to GPS cable to power the  factory GPS directly to PC which is recommended for using a pi to fiddle with the data, watch your port current a hub is recommended. The factory chip is fast and has nice boot-up includes some fancy technology.
 
 ### Connections power and serial
 The other item to be sure to have is cables TT-USB and a PP-RTG /+null one or all three (usb/serial+null) are needed.
- - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. To keep this isolated recomend using the manufacture cables which are all labled.
+ - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. To keep this isolated recommend using the manufacture cables which are all labeled.
  - You can use the PP-RTG with your own injected ~8v/12v and a null modem cable or adapter to your computer serial. If you power it to 12v ***have a RF load connected.***
  - You can use the TT-USB to the device directly nothing else needed, watch your port current, suggest a hub.
 
  ### Connection antenna
- The full ready to go kit, includes a magmount, SMA-M 2m antenna with about 6 foot of coax. The antenna will likley be damaged in shipping and its base can use a spot of goralla glue, as it will break. It works, its retail-shipped price is around $30 in 2022-USD, to be clear..  its a $5 antenna you will use for too long, or never. They also sell a v6 dipole that is about the size of your hand. I wouldnt recomend, use your own magmount or ladder Jpole for terestrial work. the stuff they up-sell works but its not worth the value long term. Antenna is not weather rated at all, dont leave in rain, at minimal crack open the base, and fill it with glue to waterproof this cavity and keep magnent inside.
+ The full ready to go kit, includes a mag-mount, SMA-M 2m antenna with about 6 foot of coax. The antenna will likely be damaged in shipping and its base can use a spot of gorilla glue, as it will break. It works, its retail-shipped price is around $30 in 2022-USD, to be clear..  its a $5 antenna you will use for too long, or never. They also sell a v6 dipole that is about the size of your hand. I wouldn't recommend, use your own mag-mount or ladder J-pole for terrestrial work. the stuff they up-sell works but its not worth the value long term. Antenna is not Wx rated at all, don't leave in rain, at minimal crack open the base, and fill it with glue to waterproof this cavity and keep magnet inside.
 
  ## Reading material beyond here
 
@@ -47,7 +47,7 @@ enter the data into [findu entermsg tool](http://www.findu.com/cgi­bin/entermsg
   - if you mess up send the same VAR into the message tool (PARM,UNIT,EQNS)
 
 ## backup default device
- - Recomend a read config, a save config and set that .tt3 file to readonly status. This way you have a safe default copy. 
+ - Recommend a read config, a save config and set that .tt3 file to readonly status. This way you have a safe default copy. 
  - now when changes are made pressing save will ask what to save new file and not your default!
 
 # Advanced modding
@@ -57,12 +57,12 @@ the “SW” and “T” markings are reversed. “T” is the secondary configu
 ## Adding sensors
 
 ### VCC
-Tap +5vcc directly off the 5 Volt regulator's U3 output pin PIN3. (***Note*** that there is a 12 Volt regulator too...don't tap that one!!) it is not recomended to use the DB9 GPS power.
+Tap +5vcc directly off the 5 Volt regulator's U3 output pin PIN3. (***Note*** that there is a 12 Volt regulator too...don't tap that one!!) it is not recommended to use the DB9 GPS power.
 
 ### SIGnal
-Again note, the T and S markings are reversed, so "S screenprint" is for the telemetry input. S is for switch see photo above and notice where the wires travel to make this clear. 
+Again note, the T and S markings are reversed, so "S screen-print" is for the telemetry input. S is for switch see photo above and notice where the wires travel to make this clear. 
 - There is a ground connection at 2mm spacing. 
-- We will call it the T/telemetry line and not reference the screenprints.
+- We will call it the T/telemetry line and not reference the screen-prints.
 
 This telemetry line feeds the device (PIC/RB6/13 "pin11") analog 5vREF, PULL-UP
 
@@ -82,7 +82,7 @@ TODO: show EQNS
 
 ## Software changes
 
-These are recomended changes to make to the default config as shipped. 
+These are recommended changes to make to the default config as shipped. 
 
 NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
 
@@ -105,7 +105,7 @@ allows telemetry definitions to be sent regularly to describe and adjust the tel
 
 Following is for temp return in F added the additional sensor into battery2 as voltage, this is entered directly into the GUI edit telemetry window. Change my call to the SSID that your profile is using
 
-This is hard set and replaces the data on aprs.fi its prefered to keep it in the cloud typically..
+This is hard set and replaces the data on aprs.fi its preferred to keep it in the cloud typically..
 
 **before you do any of this, remember that the PIC is 5v and this is a unprotected line**
 
@@ -162,12 +162,12 @@ Wx serial [data](https://www.peetbros.com/shop/custom.aspx?recid=29)
 
 todo: find serial specs for the WX200 / WM918
 
-## Findu quicklinks for scripting into automation
+## Findu quick-links for scripting into automation
  - POST into `http://www.findu.com/cgi-bin/sendmsg.cgi?fromcall=N0CALL&tocall=N0CALL&msg=EQNS.0%2C0.0293%2C0%2C0%2C0.879%2C-459.67`
  - pre filled form `www.findu.com/cgi-bin/entermsg.cgi?fromcall=N0CALL-9&tocall=N0CALL`
  - sniff the db `http://www.findu.com/cgi-bin/msg.cgi?call=*`
 
-More on EQNS on page 70 Telemetry starts a little back on 68 of the [APRS whitepapers](http://www.aprs.org/doc/APRS101.PDF)
+More on EQNS on page 70 Telemetry starts a little back on 68 of the [APRS white-papers](http://www.aprs.org/doc/APRS101.PDF)
 
 APRS Telemetry [note](http://he.fi/doc/aprs-base91-comment-telemetry.txt) for Base91 and aprs.fi telemetry
 
@@ -178,5 +178,6 @@ APRS Telemetry [note](http://he.fi/doc/aprs-base91-comment-telemetry.txt) for Ba
 Bash telemetry blog posts
 - https://s55ma.radioamater.si/2017/07/27/send-aprs-objects-or-telemetry-via-bash/
 - https://s55ma.radioamater.si/2017/07/27/send-aprs-datatelemetry-via-xastir-command-line/
+
 
 
