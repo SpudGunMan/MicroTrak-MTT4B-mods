@@ -52,7 +52,10 @@ enter the data into [findu entermsg tool](http://www.findu.com/cgi­bin/entermsg
 
 # Advanced modding
 ![mtrak](img/mtrak.jpeg)
-the “SW” and “T” markings are reversed. “T” is the secondary configuration switch input, and “SW” is the analog telemetry input photo here shows functioning connections to the hardware. jumpers used to extend the telemetry port externally when used.
+
+The newest RTG's ( made in the last few years and having an SMD PIC, have 20 pin devices. The older units use an 18 pin DIP PIC, so you need to make sure you are looking at schematics for the current version, V1.8. On this board, the PCB silkscreen "T" and the SW" are backwards..that is to say, next to the wrong inputs. "SW" is actually the 0-5 Volt analog input, and "T" is for an external profile switch to select one of two configurations. 
+
+ photo here shows functioning connections to the hardware recieved nov-2022. jumpers used to extend the telemetry port externally when used.
 
 ## Adding sensors
 
