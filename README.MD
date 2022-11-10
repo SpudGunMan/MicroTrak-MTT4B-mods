@@ -68,7 +68,7 @@ This telemetry line feeds the device (PIC/RB6/13 "pin11") analog 5vREF, PULL-UP
 
 Being a ***pull-up*** we also need to reference to the vcc and we additionally want some protection on this Signal for current limiting. 
 
-Depending on your sensor this varies the temp sensors for example are using a 00k resistor, and the volts are using a 2.2k resistor see more in the EQNS section for why calculations are needed for this resistor.
+Depending on your sensor this varies the temp sensors for example are using a 2.2k resistor, and the volts are using a 2.2k resistor calculations are needed for this resistor.
 
 ### GND
 There is a ground connection at 2mm spacing headers, this is uncommon spacing.
