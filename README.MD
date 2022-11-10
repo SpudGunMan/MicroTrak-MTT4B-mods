@@ -1,5 +1,13 @@
 # Micro­Trak RTG frequency agile FA
 
+Page dedicated to figureing out how to use the device as its advertised :)
+
+GPS, likely best to buy the one they sell (of which there are two, which appears one has better altitude sensor) as well as all the cables TT-USB and a PP-RTG/+null, they add 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. Likely the best place for VCC however unconfirmed at this time. 
+
+You can use the PP-RTG with your own injected ~8v and a null modem cable or adapter to your computer.
+
+You can use the TT-USB to the device directly watch your port current, recommend using a USB hub.
+
 The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions
 
 The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits.
