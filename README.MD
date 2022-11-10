@@ -135,7 +135,7 @@ The volts `0,0.0293,0` is calculated in the following way.
   - back to EQNS (Ax^2 + Bx + C). The first 3 numbers in the EQNS:
     - A = 0, B = 0.0293, and C = 0
 
-![eqns](eqns.jpg)
+![eqns](img/eqns.jpg)
 APRS.org document snip with red text overlay showing this device values.
 
 ### The EQNS temp
