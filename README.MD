@@ -150,7 +150,7 @@ The EQNS Temp `0,0.879,-­459.67`F or `0,0.489,-­273.15`C is calculated in the 
   - LM-355 voltage(5V/1023) / 0.01V = 0.489 and then 273.15 is subtracted.
 
 ### EQNS for cDs Light 
-
+TODO 
 the scale is logarithmic, but the constants are Ax^2+Bx+C and impossible to align.
 
 However, you could easily express the values in percent of full value.
@@ -199,6 +199,9 @@ APRS Telemetry [note](http://he.fi/doc/aprs-base91-comment-telemetry.txt) for Ba
 Bash telemetry blog posts
 - https://s55ma.radioamater.si/2017/07/27/send-aprs-objects-or-telemetry-via-bash/
 - https://s55ma.radioamater.si/2017/07/27/send-aprs-datatelemetry-via-xastir-command-line/
+
+# Recognition
+Thanks to Rob KB8RCO and Allen AF6OF
 
 
 
