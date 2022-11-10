@@ -72,7 +72,9 @@ Flashing is done via binary mode of a terminal emulator
 
 
 
-
+# References
+ - http://aprs.org/satt4.html
+ 
 
 
 
