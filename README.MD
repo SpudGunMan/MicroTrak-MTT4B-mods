@@ -1,17 +1,20 @@
 # Micro­Trak RTG frequency agile FA
 
-## PoWeR Up!
+## Getting Started
 
-GPS, likely best to buy the one they sell (of which there are two, which appears one has better altitude sensor) as well as all the cables TT-USB and a PP-RTG/+null, they add 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. 
+### GPS
+likely best to buy the one they sell (of which there are two, mentions one has better altimiter) the device requires a older serial standard NEMA (like what garmen puts out), not newer chip/sentances ($13 puck), they have a GUA cable or a USB to GPS cable to power the GPS directly to PC which is recomended for using a pi to fiddle with the data, watch your port current a hub is recomended.
 
-You can use the PP-RTG with your own injected ~8v and a null modem cable or adapter to your computer.
-
-You can use the TT-USB to the device directly watch your port current.
+### Connections power and serial
+The other item to be sure to have is cables TT-USB and a PP-RTG /+null
+ - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming.
+ - You can use the PP-RTG with your own injected ~8v and a null modem cable or adapter to your computer serial.
+ - You can use the TT-USB to the device directly watch your port current, suggest a hub.
 
 The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions
 
- The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits.
- - A difference my shipped device has the following autoTXD changes as defaults
+The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits.
+- A difference my shipped device has the following autoTXD changes as defaults
 ![timing](timing.jpg)
 
 NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
