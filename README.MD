@@ -149,6 +149,24 @@ The EQNS Temp `0,0.879,-­459.67`F or `0,0.489,-­273.15`C is calculated in the 
 - For Celsius, (deg C == deg K – 273.15) 
   - LM-355 voltage(5V/1023) / 0.01V = 0.489 and then 273.15 is subtracted.
 
+### EQNS for cDs Light 
+
+the scale is logarithmic, but the constants are Ax^2+Bx+C and impossible to align.
+
+However, you could easily express the values in percent of full value.
+  - So 0 bits = 0% and 1000 bits is 100%.
+  - Although the data should never reach 1000 (highest is 999).
+  - A3, B3, C3 would then be 0, 0.1, 0.
+
+table (using 1000 instead of 999 for bit conversion):
+|Volts ver div|bit size|display
+|---|---|---|
+|0.1V * 1000 / 5 |20 bits |applying the 0.1 gain = 2% Very dark
+|1.0V * 1000 / 5 |200 bits|applying the 0.1 gain = 20%
+|2.5V * 1000 / 5 |500 bits|applying the 0.1 gain = 50%
+|4.0V * 1000 / 5 |800 bits|applying the 0.1 gain = 80%
+|5.0V * 1000 / 5 |1000 bits|applying the 0.1 gain = 100% VERY BRIGHT!
+
 
 ## Notes
  - TinyTrak firmware takes in NMEA serial GPS data, and sends out APRS formatted position packets
