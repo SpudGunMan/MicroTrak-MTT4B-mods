@@ -22,11 +22,17 @@ Now that was a mouthfull and to say. not leaving out the TT4 Quick Start [Guide]
 
 Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
 
-### Ports
+## Ports
 
-PORT B, the DB-9 connector on the power/serial cable, is generally used to connect a GPS.It is wired "backwards" in respect to a normal RS-232 connector, so you don't have to use a Null Modem adapter to connect a standard GPS receiver. In the default settings, it is set up as a 4800 Baud NMEA GPS. (All the ports on a TT4/MTT4 start up at 19200 and TEXT, and then switch to whatever else you may have set) 
+### PORT B, the DB-9 
+The power/serial cable, is generally used to connect a GPS. It is wired "backwards" in respect to a normal RS-232 connector, so you don't have to use a Null Modem adapter to connect a standard GPS receiver. (like all devices)
 
-The TT-USB cable will supply the 5 Volt power needed to light up the low power parts of an MTT4BT. This keeps you from having to connect it to external power and subsequently having to connect the unit to an antenna or dummy load. With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program ( The GUI TT4 config won't work) 
+- In the default settings, it is set up as a PORTB 4800 Baud NMEA GPS. 
+- All the ports on a TT4/MTT4 start up at 19200 and TEXT, and then switch to whatever else you may have set
+- The TT-USB cable will supply the 5 Volt power needed to light up the low power parts of an MTT4BT.
+  - This keeps you from having to connect it to external power and subsequently having to connect the unit to an antenna or dummy load. 
+  - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
+  - The GUI TT4 config won't work per factory, but did on mine shipped unconfigured.
 
 To connect through PORT A using a Byonics USB-25mm cable, you have to apply power to the MTT4BT. This can be done via the USB cable connected to PORT B, or external power. ( Don't blow up your transceiver please, use a dummy load  whenever you are using direct 12 Volt power) 
 
