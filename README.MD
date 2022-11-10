@@ -1,6 +1,6 @@
 # Micro­Trak RTG frequency agile FA
 
-Page dedicated to figureing out how to use the device as its advertised :)
+## PoWeR Up!
 
 GPS, likely best to buy the one they sell (of which there are two, which appears one has better altitude sensor) as well as all the cables TT-USB and a PP-RTG/+null, they add 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. Likely the best place for VCC however unconfirmed at this time. 
 
