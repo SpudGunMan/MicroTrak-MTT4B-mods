@@ -51,7 +51,7 @@ the “SW” and “T” markings are reversed. “T” is the secondary configu
 ## Adding sensors
 
 ### VCC
-Tap +5vcc directly off the 5 Volt regulator's output pin. (***Note*** that there is a 12 Volt regulator too...don't tap that one!!) it is not recomended to use the DB9 GPS power.
+Tap +5vcc directly off the 5 Volt regulator's U3 output pin PIN3. (***Note*** that there is a 12 Volt regulator too...don't tap that one!!) it is not recomended to use the DB9 GPS power.
 
 ### SIGnal
 Again note, the T and S markings are reversed, so "S screenprint" is for the telemetry input. S is for switch see photo above and notice where the wires travel to make this clear. 
