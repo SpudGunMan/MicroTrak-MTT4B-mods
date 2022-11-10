@@ -2,20 +2,19 @@
 
 ## PoWeR Up!
 
-GPS, likely best to buy the one they sell (of which there are two, which appears one has better altitude sensor) as well as all the cables TT-USB and a PP-RTG/+null, they add 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. Likely the best place for VCC however unconfirmed at this time. 
+GPS, likely best to buy the one they sell (of which there are two, which appears one has better altitude sensor) as well as all the cables TT-USB and a PP-RTG/+null, they add 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. 
 
 You can use the PP-RTG with your own injected ~8v and a null modem cable or adapter to your computer.
 
-You can use the TT-USB to the device directly watch your port current, recommend using a USB hub.
+You can use the TT-USB to the device directly watch your port current.
 
 The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions
 
-The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits.
-A difference my shipped device has the following autoTXD changes as defaults
+ The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits.
+ - A difference my shipped device has the following autoTXD changes as defaults
+![timing](timing.jpg)
 
 NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
-
-![timing](timing.jpg)
 
 ## Quick Setup
 
@@ -38,16 +37,33 @@ enter the data into [findu entermsg tool](http://www.findu.com/cgi­bin/entermsg
     - so if your device is programed for N0CALL-4 you want to send from NOCALL-1 
   - if you mess up send the same VAR into the message tool (PARM,UNIT,EQNS)
 
+## backup default device first
+ - Recomend a read config, a save config and set that .tt3 file to readonly status. This way you have a safe default copy. 
+ - now when changes are made pressing save will ask what to save new file and not your default!
 
 # Advanced and mods
 ![mtrak](mtrak.jpeg)
 the “SW” and “T” markings are reversed. “T” is the secondary configuration switch input, and “SW” is the analog telemetry input photo here shows functioning connections to the hardware. jumpers used to extend the telemetry port externally when used.
 
-## backup default device first
- - Recomend a read config, a save config and set that .tt3 file to readonly status. This way you have a safe default copy. 
- - now when changes are made pressing save will ask what to save new file and not your default!
+## Adding sensors
+
+Tap +5vcc directly off the 5 Volt regulator's output pin. ( Note that there is a 12 Volt regulator too...don't tap that one!) it is not recomended to use the DB9 GPS power.
+
+Again note, the T and S markings are reversed, so "S screenprint" is for the telemetry input. There is a ground connection at 2mm spacing. 
+
+This telemetry line feeds PIC/RB6/13 "pin11" analog 5vREF, PULL-UP, which is the "T" here refered to the T line for telemetry line reguardless of its silkscreen marking. S is for switch see photo above and notice where the wires travel to make this clear.
+
+Being a pull-up line we also need to reference to the vcc and we additionally want some protection on this line. Depending on your sensor this varies the temp sensors for example are using a 00k resistor, and the volts are using a 2.2k resistor see more in the EQNS section for why calculations are needed for this resistor.
+
+So we now have VCC and SIG and GND which means we have enough to process an analog signal.
+
+
 
 ## Software changes
+
+These are recomended changes to make to the default config as shipped. 
+
+NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
 
  - UART enable
    - Allow TTL Serial, enable to have easy interface with raspberry pi GPIO or similar.
@@ -59,7 +75,7 @@ the “SW” and “T” markings are reversed. “T” is the secondary configu
     - Change channels
       - 1 supply voltage, sampled from PIC RB4/11 "pin7"
       - 2 LM-335 temp sampled from PIC RB2/9 "pin8"
-      - 3 "T" PCB pin-header (2mm pitch not 2.5 like tt4), sampled from PIC ~~RB5/12~~ RB6/13 "pin11"
+      - 3 "T" PCB pin-header (2mm pitch), sampled from PIC ~~RB5/12~~ RB6/13 "pin11"
     - Definition Rate 0 assume is off??
 
 ### The Telemetry Definition Text
@@ -67,6 +83,8 @@ allows telemetry definitions to be sent regularly to describe and adjust the tel
     - can we send other data/msg...??
 
 Following is for temp return in F added the additional sensor into battery2 as voltage, this is entered directly into the GUI edit telemetry window. Change my call to the SSID that your profile is using
+
+This is hard set and replaces the data on aprs.fi its prefered to keep it in the cloud typically..
 
 **before you do any of this, remember that the PIC is 5v and this is a unprotected line**
 
