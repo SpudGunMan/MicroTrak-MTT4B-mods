@@ -6,15 +6,15 @@
 Likely best to buy the one they sell (of which there are two, mentions one has better altimiter screen printed on top visually) its a very nice [chip](https://www.mouser.com/new/lantronix/lantronix-sirfstar-iv-modules/). The MicroTrak's requires 'serial standard NEMA', not newer chip/sentances, they have a GUA cable or a USB to GPS cable to power the  factory GPS directly to PC which is recomended for using a pi to fiddle with the data, watch your port current a hub is recomended. The factory chip is fast and has nice bootup includes some fancy technology.
 
 ### Connections power and serial
-The other item to be sure to have is cables TT-USB and a PP-RTG /+null one or all three (usb,serial,null) are needed.
- - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. To keep this isolated using the manufacture cables which are all labled.
- - You can use the PP-RTG with your own injected ~8v/12v and a null modem cable or adapter to your computer serial.
- - You can use the TT-USB to the device directly watch your port current, suggest a hub.
+The other item to be sure to have is cables TT-USB and a PP-RTG /+null one or all three (usb/serial+null) are needed.
+ - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. To keep this isolated recomend using the manufacture cables which are all labled.
+ - You can use the PP-RTG with your own injected ~8v/12v and a null modem cable or adapter to your computer serial. If you power it to 12v ***have a RF load connected.***
+ - You can use the TT-USB to the device directly nothing else needed, watch your port current, suggest a hub.
 
-The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions
+The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions.
 
-The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits the advanced manual.
-- A difference my shipped device has the following autoTXD changes as defaults
+The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits 'the advanced manual.'
+- A difference shipped device has the following autoTXD changes as defaults
 - ![timing](timing.jpg)
 
 NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
