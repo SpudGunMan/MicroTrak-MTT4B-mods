@@ -3,20 +3,19 @@
 ## Getting Started
 
 ### GPS
-likely best to buy the one they sell (of which there are two, mentions one has better altimiter) the device requires a older serial standard NEMA (like what garmen puts out), not newer chip/sentances ($13 puck), they have a GUA cable or a USB to GPS cable to power the GPS directly to PC which is recomended for using a pi to fiddle with the data, watch your port current a hub is recomended.
+Likely best to buy the one they sell (of which there are two, mentions one has better altimiter screen printed on top visually) its a very nice [chip](https://www.mouser.com/new/lantronix/lantronix-sirfstar-iv-modules/). The MicroTrak's requires 'serial standard NEMA', not newer chip/sentances, they have a GUA cable or a USB to GPS cable to power the  factory GPS directly to PC which is recomended for using a pi to fiddle with the data, watch your port current a hub is recomended. The factory chip is fast and has nice bootup includes some fancy technology.
 
 ### Connections power and serial
-The other item to be sure to have is cables TT-USB and a PP-RTG /+null
- - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming.
- - You can use the PP-RTG with your own injected ~8v and a null modem cable or adapter to your computer serial.
+The other item to be sure to have is cables TT-USB and a PP-RTG /+null one or all three (usb,serial,null) are needed.
+ - Byonics' adds 5v to the DB9 ports for the GPS and this is used by the TT-USB as well to power the device while programming. To keep this isolated using the manufacture cables which are all labled.
+ - You can use the PP-RTG with your own injected ~8v/12v and a null modem cable or adapter to your computer serial.
  - You can use the TT-USB to the device directly watch your port current, suggest a hub.
 
 The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions
 
-The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits.
+The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits the advanced manual.
 - A difference my shipped device has the following autoTXD changes as defaults
-
-![timing](timing.jpg)
+- ![timing](timing.jpg)
 
 NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
 
@@ -41,11 +40,11 @@ enter the data into [findu entermsg tool](http://www.findu.com/cgi­bin/entermsg
     - so if your device is programed for N0CALL-4 you want to send from NOCALL-1 
   - if you mess up send the same VAR into the message tool (PARM,UNIT,EQNS)
 
-## backup default device first
+## backup default device
  - Recomend a read config, a save config and set that .tt3 file to readonly status. This way you have a safe default copy. 
  - now when changes are made pressing save will ask what to save new file and not your default!
 
-# Advanced and mods
+# Advanced modding
 ![mtrak](mtrak.jpeg)
 the “SW” and “T” markings are reversed. “T” is the secondary configuration switch input, and “SW” is the analog telemetry input photo here shows functioning connections to the hardware. jumpers used to extend the telemetry port externally when used.
 
