@@ -34,7 +34,12 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
   - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
   - The GUI TT4 config won't work per factory, but did on mine shipped unconfigured.
 
-To connect through PORT A using a Byonics USB-25mm cable, you have to apply power to the MTT4BT. This can be done via the USB cable connected to PORT B, or external power. ( Don't blow up your transceiver please, use a dummy load  whenever you are using direct 12 Volt power) 
+### PORT A, the 2.55mm headphone
+Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
+ - You have to apply power to the MTT4BT to use this port
+   - This can be done via the USB cable connected to PORT B, or external power. 
+
+***Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power***
 
 Note that +5 is also available on JP9. ( The square hole is positive, violating all laws of god and man) But I suggest avoiding that pin, since you may want to install a jack for use with a Byonics ( Or homemade) LCD/Keyboard display adapter. This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. A warning note is that USB keyboards with a PS/2 adapter may or may not work ( Mostly not) You need a "real" ps/2 keyboard. 
 
