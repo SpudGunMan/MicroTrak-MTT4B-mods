@@ -17,11 +17,11 @@ The other item to be sure to have is cables TT-USB and a PP-RTG /+null one or al
 
  ## Reading material beyond here
 
-The [Manual](MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions.
+The [Manual](doc/MicroTrak_RTG_FA_Manual_v1.8-2.pdf) describes the hardware and firmware functions.
 
-The [Config Manual](TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits 'the advanced manual.'
+The [Config Manual](doc/TinyTrak3_Config_Manual_v1.4.pdf) is also mandatory to review as it has lots of nerdy bits 'the advanced manual.'
 - A difference shipped device has the following autoTXD changes as defaults
-- ![timing](timing.jpg)
+- ![timing](img/timing.jpg)
 
 NOTE the TinyTrak3Config v1.4.6.exe tool works under wine, additionally with box86 it works on raspberry-pi4 wine. It appears COM port mapping might need work as no ports are found however.. need to test more.
 
@@ -51,7 +51,7 @@ enter the data into [findu entermsg tool](http://www.findu.com/cgi­bin/entermsg
  - now when changes are made pressing save will ask what to save new file and not your default!
 
 # Advanced modding
-![mtrak](mtrak.jpeg)
+![mtrak](img/mtrak.jpeg)
 the “SW” and “T” markings are reversed. “T” is the secondary configuration switch input, and “SW” is the analog telemetry input photo here shows functioning connections to the hardware. jumpers used to extend the telemetry port externally when used.
 
 ## Adding sensors
@@ -76,7 +76,7 @@ There is a ground connection at 2mm spacing headers, this is uncommon spacing.
 ## CDS Photo Sensor
 Example of a simple and fun addition to the device.
 
-![cds](cds-circuit.png)
+![cds](img/cds-circuit.png)
 
 TODO: show EQNS
 
@@ -156,7 +156,7 @@ The EQNS Temp `0,0.879,-­459.67`F or `0,0.489,-­273.15`C is calculated in the 
 # Reference material
 T Packets https://aprs.fi/telemetry/a/N0CALL
 
-16F1827 [PIC41391D](41391D.pdf)
+16F1827 [PIC41391D](doc/41391D.pdf)
 
 Wx serial [data](https://www.peetbros.com/shop/custom.aspx?recid=29)
 
