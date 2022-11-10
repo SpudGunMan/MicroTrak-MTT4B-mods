@@ -1,4 +1,5 @@
-# Micro­Trak RTG frequency agile FA
+# Micro­Trak RTG -FA
+frequency agile VFO Micro­Trak RTG APRS Beacon hardware. The MicroTrak tracker line combines the TinyTrak controller with a supplied GPS and built in transmitter
 
 ## Getting Started
 
