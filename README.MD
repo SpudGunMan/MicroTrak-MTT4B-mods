@@ -10,13 +10,13 @@ MTT4BT, This MicroTrak tracker line combines the TinyTrak4 with an internal blue
 This device's manuals are much harder to focus on as it builds from years of the TT4 enhancment addons.
 Kicking it off!
 
- - The [Manual](doc/MTT4B_Manual_v1.0.pdf) & [Schematics](doc/MTT4BTv1.7Schematic.pdf) and hardware guide and a list of software commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
+ - The [Manual](doc/MTT4B_Manual_v1.0.pdf) and hardware guide and a list of software commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
 
  - The [addendum](doc/MTT4BT_Manual_Addendum.pdf) has hardware configs and Bluetooth settings for the big version, which also references this BT chip, [HC05BT](doc/HC05BT.pdf). Also as well, the firmware [guide](doc/TinyTrak4_Firmware_Manual_v1.1.pdf) for flashing. And the tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) with more details on software as well!
 
  - not done yet! next up is the extra stuff, the operation of the [display](tt4/tt4_display_v1.3.pdf) as well as wire [guide](tt4/tt4_display_wiring.pdf) for the tt4 but applied here as well.
 
- - after you consumed all that, dont forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) for further details on the parts not covered in the others... whew!
+ - after you consumed all that, dont forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) and & [Schematics](doc/MTT4BTv1.7Schematic.pdf) for further details on the parts not covered in the others... whew!
 
 Now that was a mouthfull and to say. not leaving out the TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) and any aprs '101' EQNS and such.. compiled [here](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
 
