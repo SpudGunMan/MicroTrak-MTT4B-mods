@@ -24,8 +24,9 @@ Truth be told the reason for this github is just sorting out the endless documen
 
 In addition to the reading, make sure to buy the following cables, in addition to a GPS. 
 - USB-25mm, and a TT-USB
-- Comes with a PP-RTG which a GPS or null modem PC will connect to. 
-  - PP-RTG cable which will connect 12v and GPS.
+
+Comes with a PP-RTG which a GPS or null modem PC will connect to. 
+- PP-RTG cable which will connect 12v and GPS.
 
 See the RTG for notes of GPS
 
