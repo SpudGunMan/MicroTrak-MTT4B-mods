@@ -16,9 +16,9 @@ Kicking it off!
 
  - not done yet! next up is the extra stuff, the operation of the [display](tt4/tt4_display_v1.3.pdf) as well as wire [guide](tt4/tt4_display_wiring.pdf) for the tt4 but applied here as well.
 
- - after you consumed all that, dont forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) and & [Schematics](doc/MTT4BTv1.7Schematic.pdf) for further details on the parts not covered in the others... whew!
+ - after you consumed all that, dont forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) and & MTT4B [Schematics](doc/MTT4BTv1.7Schematic.pdf) for further details on the parts not covered in the others... whew!
 
-Now that was a mouthfull and to say. not leaving out the TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) and any aprs '101' EQNS and such.. compiled [here](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
+Now that was a mouthfull to say! not leaving out the TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) and any aprs '101' EQNS and such.. compiled [here](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
 
 Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
 
