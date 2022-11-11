@@ -22,7 +22,10 @@ Now that was a mouthfull and to say. not leaving out the TT4 Quick Start [Guide]
 
 Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
 
-In addition to the reading, make sure to buy the following cables in addition to a GPS, USB-25mm, and a TT-USB, it comes with a PP-RTG which a GPS or null modem PC will connect to. PP-RTG cable which will connect 12v and GPS.
+In addition to the reading, make sure to buy the following cables, in addition to a GPS. 
+- USB-25mm, and a TT-USB
+- Comes with a PP-RTG which a GPS or null modem PC will connect to. 
+  - PP-RTG cable which will connect 12v and GPS.
 
 See the RTG for notes of GPS
 
