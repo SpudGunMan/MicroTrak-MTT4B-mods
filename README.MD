@@ -55,13 +55,14 @@ Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenw
 
 The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured,
 
-Default shipped configuration PORTA 2.55mm connection is wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B, as shown in the [addendum](doc/MTT4BT_Manual_Addendum.pdf)
+Default shipped configuration PORTA 2.55mm connection is wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B
 
-The following shows settings to enable the BT module. Open the device and change jumpers...
+The following image shows settings to enable the BT module. Open the device and change jumpers...
 
 ![enable](img/enable-bt.jpg)
 
-image shows settings to enable BT module as PORTA
+image shows settings to enable BT module as PORTA per, [addendum](doc/MTT4BT_Manual_Addendum.pdf)
+
 [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
 ### HEADER for PS2, LCD
