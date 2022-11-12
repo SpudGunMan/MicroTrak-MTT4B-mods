@@ -27,12 +27,6 @@ Comes with a PP-RTG which a GPS or null modem PC will connect to.
 - PP-RTG cable which will connect 12v and GPS.
 - See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
 
-The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) whihc has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
- - TXFREQ 144.390
- - RXFREQ 144.390
-
-After you have made any changes, you can either type “quit”, recycle power, or push the reset button on the PC board inside the unit. Your changes will now be in effect.
-
 # Ports
 
 ## PORT B, the DB-9 
@@ -116,6 +110,12 @@ I noticed on my new in box unit on inspection that the PCB had thermal discolori
 ![cooling](img/cooling.jpg)
 
 # Software
+The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) whihc has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
+ - TXFREQ 144.390
+ - RXFREQ 144.390
+
+After you have made any changes, you can either type “quit”, recycle power, or push the reset button on the PC board inside the unit. Your changes will now be in effect.
+
 Device runs at 19200baud
 
 The TEST44 is a bench-test ID entered during testing. If you did not request that Byon program your MTT4BT prior to shipping, it has that test callsign or the default NOCALL entered as callsigns entered in the main bank. 
