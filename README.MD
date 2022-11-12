@@ -61,15 +61,7 @@ The following shows settings to enable the BT module. Open the device and change
 
 ![enable](img/enable-bt.jpg)
 
-Enable BT module as PORTA
-
-To change any settings on the BT module [HC05BT](doc/HC05BT.pdf) change the jumpers to the following (using the 2.5mm cable)
-
-To access the BT module set the jumpers to the following.
-
-![btserial](img/bt-serial.jpg)
-
-Enable PORTA re-direct to BT-Module
+Shows settings to Enable BT module as PORTA
 
 ### HEADER for PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
@@ -110,7 +102,17 @@ Flashing is done via binary mode of a terminal emulator
     - press `s` to start binary transfer
     - blink blink .........* finished old school stuff.
 
+## Enable PORTA re-direct to BT-Module
 
+To change any settings on the BT module [HC05BT](doc/HC05BT.pdf) change the jumpers to the following (using the 2.5mm cable)
+
+![btserial](img/bt-serial.jpg)
+
+With power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
+
+Set up terminal-emulator at 19200 on your PC, It may be possible that the baud rate is 38400 or 9600, so also try those if you dont connect.
+
+Enter `​AT` and press enter, ​in the terminal-emulator program and the module should respond with O​K.​If it does not, check that the terminal is sending CR/LF when enter is pressed.  Be sure to remove J7 jumper shunt and select the wireless PORTA mode after configuring.
 
 
 
