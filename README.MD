@@ -50,7 +50,7 @@ Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenw
 
 ## PORT A, Bluetooth
 
-The MTT4BT makes PORT-A available either via (bluetooth OR 2.55mm stereo jack). Three 2.5mm jumpers on the MTT4BT PCB board select how PORTA is configured.
+The MTT4BT makes PORT-A available either via (bluetooth OR 2.55mm stereo jack). 2.5mm jumpers on the MTT4BT PCB board select how PORTA is configured.
 
 - Default jumpers set, PORT-A wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B
 - Must change jumpers to change PORTA bnehavior (ATMEGA-serial or BT-serial)
