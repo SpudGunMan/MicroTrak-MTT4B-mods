@@ -129,17 +129,15 @@ now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA]
 |`AT+PSWD?`|Read the current connection PIN/password
 |`AT+PSWD=1234`|Set the connection PIN/password to 1234
 
-You can copy and paste the full block to "reset" your module to Byonics default config.
+You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator.
 
 ```
-AT+ORGL
-AT+UART?
 AT+UART:19200,1,0
-AT+NAME?
 AT+NAME=MTT4BT
-AT+PSWD?
 AT+PSWD=1234 
 ```
+
+remember to return to normal mode, reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
 
 
 # References
