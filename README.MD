@@ -81,7 +81,7 @@ The MTT4B has two built in telemetry channels, one that reports the supply volta
 
 ![jp3](img/jp3.jpg)
 
-Sensor Header shows tp add a 2.2k limiting resitor for protection.
+Sensor Header
 
 VCC +5
 - J3 Pin 2
