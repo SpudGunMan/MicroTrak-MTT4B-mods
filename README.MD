@@ -96,12 +96,15 @@ Needed packages on Raspian/Debian on a raspberry pi
 ```
 sudo apt-get install bluetooth bluez blueman
 ```
-
 On the linux box, navigate to new bluetooth interface in menu bar. Turn MTT4B on with BT module jumpers [enabled](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) and make sure your HC-05 module is blinking red you should see a pair connection named MTT4BT on raspberry pi. Password is 1234
 - Add new device, pair connection named MTT4BT on raspberry pi. 
 - Password is 1234
 
-if you see device, HC-05 the module may need programming see [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
+If you see device, HC-05 the module may need programming see [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
+
+Shoud see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC.
+
+Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
 
 # Software
 Device runs at 19200baud
