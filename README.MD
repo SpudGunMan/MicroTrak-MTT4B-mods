@@ -116,12 +116,26 @@ Set up terminal-emulator at 19200 on your PC, It may be possible that the baud r
 
 With power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
-In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed.  
+In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. 
+
+You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400baud and then past the following..
+
+```
+AT+NAME=MTT4BT
+AT+PSWD=1234
+AT+ADDR?
+AT+UART:19200,1,0
+```
+
+additionally you can send from linux CLI
+```
+echo -e "AT+UART:19200,1,0\r" | picocom -b 38400 -qrx 1000 /dev/ttyUSB0
+```
 
 now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
 
 
-Partial list of AT command table
+### Partial list of AT command table
 | AT Command | Description |
 | --- | --- |
 |`AT+ORGL`|Slave mode, pin code :1234, device name: H-C-2010-06-01 ,Baud 38400
@@ -132,29 +146,19 @@ Partial list of AT command table
 |`AT+RESET`|Reset
 |`AT+VERSION?`|Version infromation
 |`AT+ADDR?`|Bluetooth address: NAP: UAP : LAP
-|`AT+ROLE?`|Check module mode 0-slave 1-master 2-slaveloop, set with `AT+ROLE=`
+|`AT+ROLE?`|Check module mode, set with `AT+ROLE=` 0-slave 1-master 2-slaveloop
 |`AT+CLASS?`|Check device class set with `AT+CLASS=`
-|`AT+INQM?`|Check — Query access patterns
+|`AT+INQM?`|Check Query access patterns
 |`AT+CMODE`|Check connect mode set with `AT+CMODE=` 0-connect fixed 1-connect any
 |`AT+BIND?`|Check fixed address set with `AT+BIND=` 00:00:00:00:00:00
-|`AT+IPSCAN?`|Check – scan parameter
-|`AT+SNIFF?`|Check – SNIFF parameter
+|`AT+IPSCAN?`|Check scan parameter
+|`AT+SNIFF?`|Check SNIFF parameter
 |`AT+RMAAD`|Delete All Authenticated Device
 |`AT+ADCN?`|Get Authenticated Device Count
 |`AT+MRAD?`|Most Recently Used Authenticated Device
 |`AT+STATE?`|Get the module working state
 
-You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400baud and then past the following..
-
-```
-AT+UART:19200,1,0
-AT+NAME=MTT4BT
-AT+PSWD=1234
-AT+ADDR?
-```
-
 remember to return to normal mode, reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
-
 
 # References
  - http://aprs.org/satt4.html
