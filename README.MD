@@ -128,7 +128,7 @@ change the jumpers to the following..
 
 Set up terminal-emulator at 19200 on your PC, It may be possible that the baud rate is 38400 or 9600, so also try those if you dont connect.
 
-With power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
+With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
 In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. 
 
