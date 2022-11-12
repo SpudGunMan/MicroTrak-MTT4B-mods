@@ -2,8 +2,6 @@
 
 MTT4BT, This MicroTrak tracker line combines the TinyTrak4 with an internal bluetooth module. With a supplied GPS and built in ~14-watt frequency agile VFO / 2-meter (144 MHz - 148 MHz)transmitter. its similar looking components to the [Micro-TrakRTGFA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) for the RF deck, turned to '11' and the PIC, is a old friend the DIP ATMEGA128.
 
-
-
 ![hardware](img/mtt4b.jpeg)
 
 ## Documentation
@@ -27,12 +25,11 @@ In addition to the reading, make sure to buy the following cables, in addition t
 
 Comes with a PP-RTG which a GPS or null modem PC will connect to. 
 - PP-RTG cable which will connect 12v and GPS.
+- See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
 
-See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
+# Ports
 
-## Ports
-
-### PORT B, the DB-9 
+## PORT B, the DB-9 
 The power/serial cable, is generally used to connect a GPS. It is wired "backwards" in respect to a normal RS-232 connector, so you don't have to use a Null Modem adapter to connect a standard GPS receiver. (like all devices)
 
 - In the default settings, it is set up as a PORTB 4800 Baud NMEA GPS. 
@@ -42,7 +39,7 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
   - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
   - The GUI TT4 config won't work per factory, but did on mine shipped unconfigured.
 
-### PORT A, the 2.55mm headphone
+## PORT A, the 2.55mm headphone
 Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
 
  - You have to apply power to the MTT4BT to use this port
@@ -51,7 +48,7 @@ Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenw
  - Offical documentation states flash firmware with 2.55mm port
    - additionally needed for to access the BT module serial port.
 
-### PORT A, Bluetooth
+## PORT A, Bluetooth
 
 The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured,
 
@@ -65,12 +62,12 @@ image shows settings to enable BT module as PORTA per, [addendum](doc/MTT4BT_Man
 
 [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
-### HEADER for PS2, LCD
+## HEADER for PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
  - Recomend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
 
-### VCC, SIG, GND
+## Sensor VCC, SIG, GND
 
 RAW DATA NOTHING VERIVIED YET
 
