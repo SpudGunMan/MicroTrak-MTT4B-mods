@@ -8,7 +8,7 @@ MTT4BT, This MicroTrak tracker line combines the TinyTrak4 with an internal blue
 This device's manuals are much harder to focus on as it builds from years of the TT4 enhancment addons.
 Kicking it off!
 
- - The [Manual](doc/MTT4B_Manual_v1.0.pdf) and hardware guide and a list of software commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
+ - The [Manual](doc/MTT4B_Manual_v1.0.pdf) and hardware guide and a list of TNC commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
 
  - The [addendum](doc/MTT4BT_Manual_Addendum.pdf) has hardware configs and Bluetooth settings for the big version, which also references this BT chip, [HC05BT](doc/HC05BT.pdf). Also as well, the firmware [guide](doc/TinyTrak4_Firmware_Manual_v1.1.pdf) for flashing. And the tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) with more details on software as well!
 
@@ -26,6 +26,12 @@ In addition to the reading, make sure to buy the following cables, in addition t
 Comes with a PP-RTG which a GPS or null modem PC will connect to. 
 - PP-RTG cable which will connect 12v and GPS.
 - See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
+
+The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard TT4. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
+ - TXFREQ 144.390
+ - RXFREQ 144.390
+
+After you have made any changes, you can either type “quit”, recycle power, or push the reset button on the PC board inside the unit. Your changes will now be in effect.
 
 # Ports
 
