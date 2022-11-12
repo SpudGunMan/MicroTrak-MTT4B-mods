@@ -22,13 +22,13 @@ Now that was a mouthfull to say! not leaving out the TT4 Quick Start [Guide](tt4
 
 Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
 
-In addition to the reading, make sure to buy the following cables, in addition to a GPS. 
+In addition to the reading, make sure to buy the following cables, in addition to a GPS. (not included but, kinda needed)
 - USB-25mm, and a TT-USB
 
 Comes with a PP-RTG which a GPS or null modem PC will connect to. 
 - PP-RTG cable which will connect 12v and GPS.
 
-See the RTG for notes of GPS
+See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
 
 ## Ports
 
@@ -44,14 +44,35 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
 
 ### PORT A, the 2.55mm headphone
 Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
+
  - You have to apply power to the MTT4BT to use this port
-   - This can be done via the USB cable connected to PORT B, or external power. 
+   - This can be done via the USB cable connected to PORT B
+     - or external power, Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power
+ - Offical documentation states flash firmware with 2.55mm port
+   - additionally needed for to access the BT module serial port.
 
-The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured, 
 
-DEFAULT hardware shipped: configuration PORTA 2.55mm connection is wired, and is identical to the original, non-­bluetooth version of the MTT4B, as shown in the [addendum](doc/MTT4BT_Manual_Addendum.pdf)
+### Bluetooth
 
-***Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power***
+The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured,
+
+My hardware shipped BT disabled: configuration PORTA 2.55mm connection is wired, and is identical to the original, non-­bluetooth version of the MTT4B, as shown in the [addendum](doc/MTT4BT_Manual_Addendum.pdf)
+
+The following shows settings enable the BT module. Open the device and change jumpers to.
+
+![enable](img/enable-bt.jpg)
+
+Enable BT module as PORTA
+
+### CONNECT:
+
+To change any settings on the BT module [HC05BT](doc/HC05BT.pdf) change the jumpers to the following (using the 2.5mm cable)
+
+To access the BT module set the jumpers to the following.
+
+![btserial](img/bt-serial.jpg)
+
+Enable PORTA re-direct to BT-Module
 
 ### PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
