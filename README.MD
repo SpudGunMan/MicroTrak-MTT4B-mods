@@ -47,6 +47,10 @@ Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwo
  - You have to apply power to the MTT4BT to use this port
    - This can be done via the USB cable connected to PORT B, or external power. 
 
+The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured, 
+
+DEFAULT hardware shipped: configuration PORTA 2.55mm connection is wired, and is identical to the original, non-­bluetooth version of the MTT4B, as shown in the [addendum](doc/MTT4BT_Manual_Addendum.pdf)
+
 ***Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power***
 
 ### PS2, LCD
