@@ -62,7 +62,7 @@ The following shows settings to enable the BT module. Open the device and change
 ![enable](img/enable-bt.jpg)
 
 image shows settings to enable BT module as PORTA
-[more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-re-direct-to-bt-module) details below.
+[more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
 ### HEADER for PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
