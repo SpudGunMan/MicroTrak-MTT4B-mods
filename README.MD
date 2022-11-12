@@ -89,6 +89,20 @@ It appears the MTT4B has a straight 7-pin header with Vcc, Ground, and the 5 ana
 It does not appear to have the resistor on Vcc.
 That would be even easier for analog inputs!
 
+# Connecting Bluetooth
+
+Needed packages on Raspian/Debian on a raspberry pi
+
+```
+sudo apt-get install bluetooth bluez blueman
+```
+
+On the linux box, navigate to new bluetooth interface in menu bar. Turn MTT4B on with BT module jumpers [enabled](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) and make sure your HC-05 module is blinking red you should see a pair connection named MTT4BT on raspberry pi. Password is 1234
+- Add new device, pair connection named MTT4BT on raspberry pi. 
+- Password is 1234
+
+if you see device, HC-05 the module may need programming see [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
+
 # Software
 Device runs at 19200baud
 
@@ -106,7 +120,7 @@ Flashing is done via binary mode of a terminal emulator
 
 ## Enable PORTA Configuration to BT-Module
 
-To change any settings on the BT module (using the 2.5mm cable) [HC05BT](doc/HC05BT.pdf) 
+To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable)
 
 change the jumpers to the following..
 
@@ -133,7 +147,6 @@ echo -e "AT+UART:19200,1,0\r" | picocom -b 38400 -qrx 1000 /dev/ttyUSB0
 ```
 
 now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
-
 
 ### Partial list of AT command table
 | AT Command | Description |
