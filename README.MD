@@ -103,7 +103,7 @@ Flashing is done via binary mode of a terminal emulator
     - press `s` to start binary transfer
     - blink blink .........* finished old school stuff.
 
-## Enable PORTA re-direct to BT-Module
+## Enable PORTA Configuration to BT-Module
 
 To change any settings on the BT module (using the 2.5mm cable) [HC05BT](doc/HC05BT.pdf) 
 
