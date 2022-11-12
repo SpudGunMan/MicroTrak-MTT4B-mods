@@ -68,22 +68,16 @@ Byonics ( now discontinued selling ) has details you can make your own LCD/Keybo
 
 ## Sensor VCC, SIG, GND
 
-RAW DATA NOTHING VERIVIED YET
+VCC +5
+- Pin 2 of J3
+- JP5 has Vcc (5V) coming through R7 (2.2k ohms), so current limited.
+- JP9 Byonics suggests avoiding that pin
 
-Note that +5 is also available on JP9. ( The square hole is positive, violating all laws of god and man) But I suggest avoiding that pin, 
+Note that although it looks like VCC pin is connected through a limiting resistor, it is not, it is connected directly to the switched 5 Volt regulators output. The resistor connecting to it is the bias for D3, the LM335 Temperature sensor.
 
-MTT4BT, you can tap +5 from pin 2 of J3.  Pin 1, the square pad, is ground. Note that although it looks like this pin is connected through a limiting resistor, it is not, it is connected directly to the switched 5 Volt regulators output. The resistor connecting to it is the bias for D3, the LM335 Temperature sensor.
+Ground
+- Pin 1, the square pad
 
-JP5 has Vcc (5V) coming through R7 (2.2k ohms), so current limited.
-
-So by jumper-ing R7 and removing R12, you could have 5V on one side of JP5 and ground on the other.
-That provides a 10-pin (2x5) connector for 4 sensors with grounds with signal and ground.
-If you don't use more than 3 sensors, you can still use JP1 for bank switching.
-Again, much easier to do on the KIT version.
-
-It appears the MTT4B has a straight 7-pin header with Vcc, Ground, and the 5 analog input pins.
-It does not appear to have the resistor on Vcc.
-That would be even easier for analog inputs!
 
 # Connecting Bluetooth
 This section isnt done yet:
