@@ -72,18 +72,23 @@ Byonics ( now discontinued selling ) has details you can make your own LCD/Keybo
  - Recomend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
 
+ ![jp9](img/jp9.jpg)
+
+ LCD/PS2 Header
+
 ## Sensor VCC, SIG, GND
+The MTT4B has two built in telemetry channels, one that reports the supply voltage to the unit, another, which reports the temperature inside the unit’s enclosure. Five additional telemetry channels are available for use ( PA3 through PA7 on J3) These inputs are capable of reading 0-5 Volt sensors and reporting the values over the APRS network.
+
+![jp3](img/jp3.jpg)
+
+Sensor Header shows tp add a 2.2k limiting resitor for protection.
 
 VCC +5
-- Pin 2 of J3
-- JP5 has Vcc (5V) coming through R7 (2.2k ohms), so current limited.
-- JP9 Byonics suggests avoiding that pin
-
-Note that although it looks like VCC pin is connected through a limiting resistor, it is not, it is connected directly to the switched 5 Volt regulators output. The resistor connecting to it is the bias for D3, the LM335 Temperature sensor.
+- J3 Pin 2
+- JP9 Header, Byonics suggests avoiding that header for sensor use, used for LCD/PS2
 
 Ground
-- Pin 1, the square pad
-
+- J3 Pin 1
 
 # Connecting Bluetooth
 This section isnt done yet:
