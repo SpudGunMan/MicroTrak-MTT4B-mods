@@ -120,22 +120,37 @@ In the terminal-emulator console enter `​AT` and press enter, and the module s
 
 now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
 
+
+Partial list of AT command table
 | AT Command | Description |
 | --- | --- |
-|`AT+ORGL`|Restores the module to factory default (38400 baud)
+|`AT+ORGL`|Slave mode, pin code :1234, device name: H-C-2010-06-01 ,Baud 38400
 |`AT+UART?`|Read the current serial configuration
 |`AT+UART:19200,1,0`|Set the serial configuration to 19200 baud, 1 stop bit, no parity
 |`AT+NAME?`|Read the current device name
-|`AT+NAME=MTT4BT`|Set the device name to MTT4BT
 |`AT+PSWD?`|Read the current connection PIN/password
-|`AT+PSWD=1234`|Set the connection PIN/password to 1234
+|`AT+RESET`|Reset
+|`AT+VERSION?`|Version infromation
+|`AT+ADDR?`|Bluetooth address: NAP: UAP : LAP
+|`AT+ROLE?`|Check module mode 0-slave 1-master 2-slaveloop, set with `AT+ROLE=`
+|`AT+CLASS?`|Check device class set with `AT+CLASS=`
+|`AT+INQM?`|Check — Query access patterns
+|`AT+CMODE`|Check connect mode set with `AT+CMODE=` 0-connect fixed 1-connect any
+|`AT+BIND?`|Check fixed address set with `AT+BIND=` 00:00:00:00:00:00
+|`AT+IPSCAN?`|Check – scan parameter
+|`AT+SNIFF?`|Check – SNIFF parameter
+|`AT+RMAAD`|Delete All Authenticated Device
+|`AT+ADCN?`|Get Authenticated Device Count
+|`AT+MRAD?`|Most Recently Used Authenticated Device
+|`AT+STATE?`|Get the module working state
 
-You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator.
+You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400baud and then past the following..
 
 ```
 AT+UART:19200,1,0
 AT+NAME=MTT4BT
-AT+PSWD=1234 
+AT+PSWD=1234
+AT+ADDR?
 ```
 
 remember to return to normal mode, reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
