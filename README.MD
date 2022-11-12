@@ -5,7 +5,7 @@ MTT4BT, This MicroTrak tracker line combines the TinyTrak4 with an internal blue
 ![hardware](img/mtt4b.jpg)
 
 ## Documentation
-This device's manuals are much harder to focus on as it builds from years of the TT4 enhancment addons.
+This device's manuals are much harder to focus on as it builds from years of the TT4 enhancement add-ons.
 Kicking it off!
 
  - The [Manual](doc/MTT4B_Manual_v1.0.pdf) and hardware guide and a list of TNC commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
@@ -37,15 +37,15 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
 - The TT-USB cable will supply the 5 Volt power needed to light up the ATMEGA on the MTT4BT.
   - This keeps you from having to connect it to external power and subsequently having to connect the unit to an antenna or dummy load. 
   - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
-  - The GUI TT4 config won't work per factory, but did on mine shipped unconfigured.
+  - The GUI TT4 config won't work per factory, but did on mine shipped un-configured.
 
 ## PORT A, the 2.55mm headphone
-Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
+Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatible cable and likely a lot of others like radio shack etc..
 
 - You have to apply power to the MTT4BT to use this port
   - This can be done via the TT-USB cable connected to PORT-B
   - PP-RTG cable via PORT-B 12v, Don't blow up your transceiver, use a RF load dummy; whenever using direct 12 Volt power
-- Offical documentation states flash firmware with 2.55mm port
+- Official documentation states flash firmware with 2.55mm port
   - additionally needed for to access the BT module serial port.
 
 ## PORT A, Bluetooth
@@ -63,7 +63,7 @@ image shows settings to enable BT module as PORT-A detailed in the [addendum](do
 
 ## HEADER for PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
- - Recomend a "real" ps/2 keyboard. 
+ - Recommend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
 
  ![jp9](img/jp9.jpg)
@@ -87,7 +87,7 @@ Ground
  - watch out JP9 and JP3 have reversed pin 1 and 2 5v/GND
 
 # Connecting Bluetooth
-This section isnt done yet:
+This section isn't done yet:
 
 Needed packages on Raspian/Debian on a raspberry pi (default in new installs)
 
@@ -100,7 +100,7 @@ On the linux box, navigate to new bluetooth interface in menu bar. Turn MTT4B on
 
 If you see device, HC-05 the module may need programming see [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
-Shoud see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC.
+Should see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC.
 
 Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
 
@@ -110,7 +110,7 @@ I noticed on my new in box unit on inspection that the PCB had thermal discolori
 ![cooling](img/cooling.jpg)
 
 # Software
-The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) whihc has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
+The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) which has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
  - TXFREQ 144.390
  - RXFREQ 144.390
 
@@ -137,7 +137,7 @@ To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable
 
 Set up a terminal-emulator at 19200 on your PC, With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
-In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. It may be possible that the baud rate is 38400 or 9600, or 4800 so also try those if you dont connect.
+In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. It may be possible that the baud rate is 38400 or 9600, or 4800 so also try those if you don't connect.
 
 You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400 baud and then past the following..
 
@@ -164,7 +164,7 @@ now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA]
 |`AT+NAME?`|Read the current device name
 |`AT+PSWD?`|Read the current connection PIN/password
 |`AT+RESET`|Reset
-|`AT+VERSION?`|Version infromation
+|`AT+VERSION?`|Version information
 |`AT+ADDR?`|Bluetooth address: NAP: UAP : LAP
 |`AT+ROLE?`|Check module mode, set with `AT+ROLE=` 0-slave 1-master 2-slaveloop
 |`AT+CLASS?`|Check device class set with `AT+CLASS=`
@@ -188,3 +188,4 @@ remember to return to normal mode, reset to the shown [BT-PORTA](https://github.
 
 # Recognition
 Thanks to Rob KB8RCO and Allen AF6OF
+
