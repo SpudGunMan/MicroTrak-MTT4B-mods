@@ -2,7 +2,7 @@
 
 MTT4BT, This MicroTrak tracker line combines the TinyTrak4 with an internal bluetooth module. With a supplied GPS and built in ~14-watt frequency agile VFO / 2-meter (144 MHz - 148 MHz)transmitter. its similar looking components to the [Micro-TrakRTGFA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) for the RF deck, turned to '11' and the PIC, is a old friend the DIP ATMEGA128.
 
-![hardware](img/mtt4b.jpeg)
+![hardware](img/mtt4b.jpg)
 
 ## Documentation
 This device's manuals are much harder to focus on as it builds from years of the TT4 enhancment addons.
@@ -107,6 +107,11 @@ If you see device, HC-05 the module may need programming see [more](https://gith
 Shoud see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC.
 
 Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
+
+# Hardware mods
+I noticed on my new in box unit on inspection that the PCB had thermal discoloring from the RF power driver. I added a thermal tape and a passive cooling fins.
+
+![cooling](img/cooling.jpg)
 
 # Software
 Device runs at 19200baud
