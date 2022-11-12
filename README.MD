@@ -74,14 +74,14 @@ Byonics ( now discontinued selling ) has details you can make your own LCD/Keybo
 
  ![jp9](img/jp9.jpg)
 
- LCD/PS2 Header, populated..
+ LCD/PS2 Header.
 
 ## Sensor VCC, SIG, GND
 The MTT4B has two built in telemetry channels, one that reports the supply voltage to the unit, another, which reports the temperature inside the unit’s enclosure. Five additional telemetry channels are available for use ( PA3 through PA7 on J3) These inputs are capable of reading 0-5 Volt sensors and reporting the values over the APRS network.
 
 ![jp3](img/jp3.jpg)
 
-JP3 Sensor Header, unpopulated so you will need to add header pin's
+JP3 Sensor Header, unpopulated so you will need to add header pin's, included is 2.2k protection on each line.
 
 VCC +5
 - J3 Pin 2
