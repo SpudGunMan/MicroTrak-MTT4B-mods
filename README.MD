@@ -61,7 +61,7 @@ The following shows settings to enable the BT module. Open the device and change
 
 ![enable](img/enable-bt.jpg)
 
-Shows settings to Enable BT module as PORTA
+image shows settings to enable BT module as PORTA
 [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-re-direct-to-bt-module) details below.
 
 ### HEADER for PS2, LCD
@@ -105,30 +105,48 @@ Flashing is done via binary mode of a terminal emulator
 
 ## Enable PORTA re-direct to BT-Module
 
-To change any settings on the BT module [HC05BT](doc/HC05BT.pdf) change the jumpers to the following (using the 2.5mm cable)
+To change any settings on the BT module (using the 2.5mm cable) [HC05BT](doc/HC05BT.pdf) 
+
+change the jumpers to the following..
 
 ![btserial](img/bt-serial.jpg)
 
-With power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
-
 Set up terminal-emulator at 19200 on your PC, It may be possible that the baud rate is 38400 or 9600, so also try those if you dont connect.
 
-Enter `​AT` and press enter, ​in the terminal-emulator program and the module should respond with O​K.​If it does not, check that the terminal is sending CR/LF when enter is pressed.  Be sure to remove J7 jumper shunt and select the wireless PORTA mode after configuring.
+With power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
+In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed.  
 
+now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
 
+| AT Command | Description |
+| --- | --- |
+|`AT+ORGL`|Restores the module to factory default (38400 baud)
+|`AT+UART?`|Read the current serial configuration
+|`AT+UART:19200,1,0`|Set the serial configuration to 19200 baud, 1 stop bit, no parity
+|`AT+NAME?`|Read the current device name
+|`AT+NAME=MTT4BT`|Set the device name to MTT4BT
+|`AT+PSWD?`|Read the current connection PIN/password
+|`AT+PSWD=1234`|Set the connection PIN/password to 1234
+
+You can copy and paste the full block to "reset" your module to Byonics default config.
+
+```
+AT+ORGL
+AT+UART?
+AT+UART:19200,1,0
+AT+NAME?
+AT+NAME=MTT4BT
+AT+PSWD?
+AT+PSWD=1234 
+```
 
 
 # References
  - http://aprs.org/satt4.html
  - https://opensource.com/article/18/3/how-configure-aprs-igate-raspberry-pi
  - https://github.com/trasukg/share-tnc
- 
-
-
-
-# Also See
-Micro-TrakRTGFA [here](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
+ - [Micro-TrakRTGFA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
 
 # Recognition
 Thanks to Rob KB8RCO and Allen AF6OF
