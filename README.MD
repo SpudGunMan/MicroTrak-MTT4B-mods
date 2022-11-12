@@ -85,10 +85,12 @@ JP3 Sensor Header, comes unpopulated, so you will need to add 2.5mm header pin's
 
 VCC +5
 - J3 Pin 2
-- JP9 Header, Byonics suggests avoiding that header for sensor use, used for LCD/PS2
 
 Ground
 - J3 Pin 1
+
+***NOTE: JP9 Header, Byonics suggests avoiding that header for sensor use, used for LCD/PS2***
+ - watch out JP9 and JP3 have reversed pin 1 and 2 5v/GND
 
 # Connecting Bluetooth
 This section isnt done yet:
