@@ -43,28 +43,25 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
   - The GUI TT4 config won't work per factory, but did on mine shipped unconfigured.
 
 ### PORT A, the 2.55mm headphone
-Be sure to pick up a not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
+Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
 
  - You have to apply power to the MTT4BT to use this port
-   - This can be done via the USB cable connected to PORT B
-     - or external power, Don't blow up your transceiver please, use a RF load, dummy; whenever you are using direct 12 Volt power
+   - This can be done via the TT-USB cable connected to PORT B
+     - or PORTB 12v, Don't blow up your transceiver, use a RF load dummy; whenever using direct 12 Volt power
  - Offical documentation states flash firmware with 2.55mm port
    - additionally needed for to access the BT module serial port.
 
-
-### Bluetooth
+### PORT A, Bluetooth
 
 The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured,
 
-My hardware shipped BT disabled: configuration PORTA 2.55mm connection is wired, and is identical to the original, non-­bluetooth version of the MTT4B, as shown in the [addendum](doc/MTT4BT_Manual_Addendum.pdf)
+Default shipped configuration PORTA 2.55mm connection is wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B, as shown in the [addendum](doc/MTT4BT_Manual_Addendum.pdf)
 
-The following shows settings enable the BT module. Open the device and change jumpers to.
+The following shows settings to enable the BT module. Open the device and change jumpers...
 
 ![enable](img/enable-bt.jpg)
 
 Enable BT module as PORTA
-
-### CONNECT:
 
 To change any settings on the BT module [HC05BT](doc/HC05BT.pdf) change the jumpers to the following (using the 2.5mm cable)
 
@@ -74,7 +71,7 @@ To access the BT module set the jumpers to the following.
 
 Enable PORTA re-direct to BT-Module
 
-### PS2, LCD
+### HEADER for PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
  - Recomend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
@@ -98,8 +95,7 @@ It appears the MTT4B has a straight 7-pin header with Vcc, Ground, and the 5 ana
 It does not appear to have the resistor on Vcc.
 That would be even easier for analog inputs!
 
-
-## Software
+# Software
 Device runs at 19200baud
 
 The TEST44 is a bench-test ID entered during testing. If you did not request that Byon program your MTT4BT prior to shipping, it has that test callsign or the default NOCALL entered as callsigns entered in the main bank. 
@@ -108,7 +104,7 @@ The TEST44 is a bench-test ID entered during testing. If you did not request tha
  - Additionally you can just program like a classic TNC via text
    - config save files are just variable dump
 
-### Firmware
+## Firmware
 Flashing is done via binary mode of a terminal emulator
  - Bootup into `b` boot loader
     - press `s` to start binary transfer
