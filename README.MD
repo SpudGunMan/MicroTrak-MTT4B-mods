@@ -32,9 +32,9 @@ Comes with a PP-RTG which a GPS or null modem PC will connect to.
 ## PORT B, the DB-9 
 The power/serial cable, is generally used to connect a GPS. It is wired "backwards" in respect to a normal RS-232 connector, so you don't have to use a Null Modem adapter to connect a standard GPS receiver. (like all devices)
 
-- In the default settings, it is set up as a PORTB 4800 Baud NMEA GPS. 
+- Typical settings, have PORT-B 4800 Baud NMEA GPS. 
 - All the ports on a TT4/MTT4 start up at 19200 and TEXT, and then switch to whatever else you may have set
-- The TT-USB cable will supply the 5 Volt power needed to light up the low power parts of an MTT4BT.
+- The TT-USB cable will supply the 5 Volt power needed to light up the ATMEGA on the MTT4BT.
   - This keeps you from having to connect it to external power and subsequently having to connect the unit to an antenna or dummy load. 
   - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
   - The GUI TT4 config won't work per factory, but did on mine shipped unconfigured.
@@ -42,25 +42,24 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
 ## PORT A, the 2.55mm headphone
 Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatable cable and likley a lot of others like radio shack etc..
 
- - You have to apply power to the MTT4BT to use this port
-   - This can be done via the TT-USB cable connected to PORT B
-     - or PORTB 12v, Don't blow up your transceiver, use a RF load dummy; whenever using direct 12 Volt power
- - Offical documentation states flash firmware with 2.55mm port
-   - additionally needed for to access the BT module serial port.
+- You have to apply power to the MTT4BT to use this port
+  - This can be done via the TT-USB cable connected to PORT-B
+  - PP-RTG cable via PORT-B 12v, Don't blow up your transceiver, use a RF load dummy; whenever using direct 12 Volt power
+- Offical documentation states flash firmware with 2.55mm port
+  - additionally needed for to access the BT module serial port.
 
 ## PORT A, Bluetooth
 
-The MTT4BT makes PORTA available either via bluetooth or a 2.5mm stereo jack. 3 jumpers on the circuit board select how PORTA is configured,
+The MTT4BT makes PORT-A available either via (bluetooth OR 2.55mm stereo jack). Three 2.5mm jumpers on the MTT4BT PCB board select how PORTA is configured.
 
-Default shipped configuration PORTA 2.55mm connection is wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B
+- Default jumpers set, PORT-A wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B
+- Must change jumpers to change PORTA bnehavior (ATMEGA-serial or BT-serial)
 
 The following image shows settings to enable the BT module. Open the device and change jumpers...
 
 ![enable](img/enable-bt.jpg)
 
-image shows settings to enable BT module as PORTA per, [addendum](doc/MTT4BT_Manual_Addendum.pdf)
-
-[more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
+image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
 ## HEADER for PS2, LCD
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
@@ -87,8 +86,9 @@ It does not appear to have the resistor on Vcc.
 That would be even easier for analog inputs!
 
 # Connecting Bluetooth
+This section isnt done yet:
 
-Needed packages on Raspian/Debian on a raspberry pi
+Needed packages on Raspian/Debian on a raspberry pi (default in new installs)
 
 ```
 sudo apt-get install bluetooth bluez blueman
@@ -119,20 +119,15 @@ Flashing is done via binary mode of a terminal emulator
     - blink blink .........* finished old school stuff.
 
 ## Enable PORTA Configuration to BT-Module
-
-To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable)
-
-change the jumpers to the following..
+To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable) change the jumpers to the following..
 
 ![btserial](img/bt-serial.jpg)
 
-Set up terminal-emulator at 19200 on your PC, It may be possible that the baud rate is 38400 or 9600, so also try those if you dont connect.
+Set up a terminal-emulator at 19200 on your PC, With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
-With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
+In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. It may be possible that the baud rate is 38400 or 9600, or 4800 so also try those if you dont connect.
 
-In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. 
-
-You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400baud and then past the following..
+You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400 baud and then past the following..
 
 ```
 AT+NAME=MTT4BT
