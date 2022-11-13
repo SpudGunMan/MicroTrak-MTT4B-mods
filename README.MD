@@ -39,18 +39,18 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
   - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
   - The GUI TT4 config won't work per factory, but did on mine shipped un-configured.
 
-## PORT A, the 2.55mm headphone
-Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.55mm compatible cable and likely a lot of others like radio shack etc..
+## PORT A, the 2.5mm headphone
+Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.5mm compatible cable and likely a lot of others like radio shack etc..
 
 - You have to apply power to the MTT4BT to use this port
   - This can be done via the TT-USB cable connected to PORT-B
   - PP-RTG cable via PORT-B 12v, Don't blow up your transceiver, use a RF load dummy; whenever using direct 12 Volt power
-- Official documentation states flash firmware with 2.55mm port
+- Official documentation states flash firmware with 2.5mm port
   - additionally needed for to access the BT module serial port.
 
 ## PORT A, Bluetooth
 
-The MTT4BT makes PORT-A available either via (bluetooth OR 2.55mm stereo jack). 2.5mm jumpers on the MTT4BT PCB board select how PORTA is configured.
+The MTT4BT makes PORT-A available either via (bluetooth OR 2.5mm stereo jack). 2.5mm jumpers on the MTT4BT PCB board select how PORTA is configured.
 
 - Default jumpers set, PORT-A wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B
 - Must change jumpers to change PORTA bnehavior (ATMEGA-serial or BT-serial)
