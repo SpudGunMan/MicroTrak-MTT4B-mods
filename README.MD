@@ -104,13 +104,6 @@ Should see a serial port which you can connect with TNC applications, depending 
 
 Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
 
-# Hardware mods
-I noticed on my new in box unit on inspection that the PCB had thermal discoloring from the RF power driver. I added a thermal tape and a passive cooling fins. this is untested and currently should be of note this might have reverse and negative effects!
-
-![cooling](img/cooling.jpg)
-
-this is untested and currently should be of note this might have reverse and negative effects! (SWR and therm)
-
 # Software
 The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) which has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
  - TXFREQ 144.390
@@ -181,6 +174,22 @@ now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA]
 |`AT+STATE?`|Get the module working state
 
 remember to return to normal mode, reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
+
+# Hardware mods
+the following is all untested.
+
+I noticed on my new in box unit on inspection that the PCB had thermal discoloring from the RF power driver. I added a thermal tape and a passive cooling fins. this is untested and currently should be of note this might have reverse and negative effects!
+
+![cooling](img/cooling.jpg)
+
+this is untested and currently should be of note this might have reverse and negative effects! (SWR and therm)
+
+
+### Hi Power mod
+a higher power RF chip can be used[ra30h1317m](https://www.mitsubishielectric-mesh.com/products/pdf/ra30h1317m.pdf)
+
+There is a tiny set of contacts near the power trimmer pot that can be solder-bridged to provide the higher gate Voltage the the higher power amplifiers require.
+
 
 # References
  - http://aprs.org/satt4.html
