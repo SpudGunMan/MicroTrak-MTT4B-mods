@@ -39,7 +39,7 @@ The power/serial cable, is generally used to connect a GPS. It is wired "backwar
   - With the current generations of MTT4BT, you can configure the MTT4BT through this port using a serial terminal program. 
   - The GUI TT4 config won't work per factory, but did on mine shipped un-configured.
 
-## PORT A, the 2.5mm headphone
+## PORT A, the 2.5mm Sub-Mini headphone
 Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenwood/serial/usb 2.5mm compatible cable and likely a lot of others like radio shack etc..
 
 - You have to apply power to the MTT4BT to use this port
@@ -105,9 +105,11 @@ Should see a serial port which you can connect with TNC applications, depending 
 Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
 
 # Hardware mods
-I noticed on my new in box unit on inspection that the PCB had thermal discoloring from the RF power driver. I added a thermal tape and a passive cooling fins.
+I noticed on my new in box unit on inspection that the PCB had thermal discoloring from the RF power driver. I added a thermal tape and a passive cooling fins. this is untested and currently should be of note this might have reverse and negative effects!
 
 ![cooling](img/cooling.jpg)
+
+this is untested and currently should be of note this might have reverse and negative effects! (SWR and therm)
 
 # Software
 The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) which has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
