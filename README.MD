@@ -68,6 +68,12 @@ Byonics ( now discontinued selling ) has details you can make your own LCD/Keybo
  - you will need to source an `IDC 10pin 2x5 Socket 2.54mm, with Ribbon Cable`
    - old [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111) part
 
+The key parameters for the display are:
+|Command|Description|
+| --- | --- |
+NODISP FALSE|NODISP true means there is no display
+TXTDISP TRUE|attached device like a computer or tablet?
+
  ![jp9](img/jp9.jpg)
 
  LCD/PS2 Header, comes populated..
