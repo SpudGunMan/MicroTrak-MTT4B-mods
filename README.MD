@@ -61,17 +61,16 @@ The following image shows settings to enable the BT module. Open the device and 
 image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
 ## HEADER for PS2, LCD
-Currently I dont know the MTT4B will work with a LCD.
 
-Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
+Byonics has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
  - Recommend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
- - you will need to source an `IDC 10pin 2x5 Socket 2.54mm, with Ribbon Cable`
-   - old [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111) part
 
  ![jp9](img/jp9.jpg)
 
- LCD/PS2 Header, comes populated!
+MTT4B JP9 Header, comes populated just need `IDC 10pin 2x5 Socket 2.54mm, with Ribbon Cable`
+ - [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111)
+
 
 The key parameters for the display are:
 |Command|Description|
