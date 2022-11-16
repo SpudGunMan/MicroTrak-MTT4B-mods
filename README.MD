@@ -61,21 +61,23 @@ The following image shows settings to enable the BT module. Open the device and 
 image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
 ## HEADER for PS2, LCD
+Currently I dont know the MTT4B will work with a LCD.
+
 Byonics ( now discontinued selling ) has details you can make your own LCD/Keyboard display [adapter](tt4/tt4_display_wiring.pdf). This adapter lets you send messages using a display and PS/2 keyboard, as well as changing most of the commonly used commands without having to connect to a PC. 
  - Recommend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
  - you will need to source an `IDC 10pin 2x5 Socket 2.54mm, with Ribbon Cable`
    - old [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111) part
 
+ ![jp9](img/jp9.jpg)
+
+ LCD/PS2 Header, comes populated!
+
 The key parameters for the display are:
 |Command|Description|
 | --- | --- |
 NODISP FALSE|NODISP true means there is no display
 TXTDISP TRUE|attached device like a computer or tablet?
-
- ![jp9](img/jp9.jpg)
-
- LCD/PS2 Header, comes populated..
 
 ## Sensor VCC, SIG, GND
 The MTT4B has two built in telemetry channels, one that reports the supply voltage to the unit, another, which reports the temperature inside the unit’s enclosure. Five additional telemetry channels are available for use ( PA3 through PA7 on J3) These inputs are capable of reading 0-5 Volt sensors and reporting the values over the APRS network.
