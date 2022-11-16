@@ -1,12 +1,22 @@
-# Micro-TrakMTT4B-mods
+# Micro-Trak MTT4/BT/FA-mods
 
-MTT4BT, This MicroTrak tracker line combines the TinyTrak4 with an internal bluetooth module. With a supplied GPS and built in ~14-watt frequency agile VFO / 2-meter (144 MHz - 148 MHz)transmitter. its similar looking components to the [Micro-TrakRTGFA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) for the RF deck, turned to '11' and the PIC, is a old friend the DIP ATMEGA128.
+MTT4BT-FA, This MicroTrak tracker line combines the TinyTrak4 with an internal bluetooth module. With a supplied GPS and built in ~14-watt frequency agile VFO / 2-meter (144 MHz - 148 MHz)transmitter. its similar looking components to the [Micro-Trak RTG FA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods), turned to '11' and the PIC, is a old friend the DIP ATMEGA128.
 
 ![hardware](img/mtt4b.jpg)
 
+## Cables
+make sure to buy the following cables, in addition to a GPS. (not included but, kinda needed)
+- USB-25mm, and a TT-USB
+
+Comes with a PP-RTG which a GPS or null modem PC will connect to. 
+- PP-RTG cable which will connect 12v and GPS.
+- See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
+
+## QuickStart
+TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) has the best where to start. This document builds on the little brother [Micro-Trak RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) be sure to review it for foundational not covered here, covers the basics of sensors and Telemetry feeds to aprs.fi. As well as quick starts for setting those parts up. This document will focus more on the TNC aspects and added hardware i/o
+
 ## Documentation
-This device's manuals are much harder to focus on as it builds from years of the TT4 enhancement add-ons.
-Kicking it off!
+This device's manuals are a bit thicker, as they build from years of the TT4 enhancement add-ons.
 
  - The [Manual](doc/MTT4B_Manual_v1.0.pdf) and hardware guide and a list of TNC commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
 
@@ -15,17 +25,6 @@ Kicking it off!
  - not done yet! next up is the extra stuff, the operation of the [display](tt4/tt4_display_v1.3.pdf) as well as wire [guide](tt4/tt4_display_wiring.pdf) for the tt4 but applied here as well.
 
  - after you consumed all that, dont forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) and & MTT4B [Schematics](doc/MTT4BTv1.7Schematic.pdf) for further details on the parts not covered in the others... whew!
-
-Now that was a mouthfull to say! not leaving out the TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) and any aprs '101' EQNS and such.. compiled [here](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
-
-Truth be told the reason for this github is just sorting out the endless documentation I didnt want to do every time I try and change a setting...
-
-In addition to the reading, make sure to buy the following cables, in addition to a GPS. (not included but, kinda needed)
-- USB-25mm, and a TT-USB
-
-Comes with a PP-RTG which a GPS or null modem PC will connect to. 
-- PP-RTG cable which will connect 12v and GPS.
-- See the [RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods#gps) for notes of GPS
 
 # Ports
 
