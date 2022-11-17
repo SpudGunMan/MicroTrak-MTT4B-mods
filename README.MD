@@ -125,7 +125,8 @@ to exit KISS for example..
 
 ## TNC KISS mode
 apply power
-press ESC three times and you have a common TNC: prompt you can flip to KISS mode with `AMODE KISS`
+press ESC three times and you have a common TNC: prompt you can 
+- flip to KISS mode with `AMODE KISS`
 ```
 :AMODE KISS
 AMODE was TEXT
