@@ -15,6 +15,8 @@ Comes with a PP-RTG which a GPS or null modem PC will connect to.
 ## QuickStart
 TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) has the best where to start. This document builds on the little brother [Micro-Trak RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) be sure to review it for foundational not covered here, covers the basics of sensors and Telemetry feeds to aprs.fi. As well as quick starts for setting those parts up. This document will focus more on the TNC aspects and added hardware i/o
 
+if you have the TT-25 and/or TT-USB cables and jump down to [Connecting](#connecting-via-serial) ortherwise skip a section down to [Ports](#ports) to figure out how to connect.
+
 ### LED Indicators
 On application of 6-12v there is a green and red stand-off LED's which will alternate twice, the red LED is a CPU running watchdog and TX/PTT indicator along with audible relay click, the Yellow is RX traffic. The green is GPS status: blink aquire, locked solid. Additionally with the cover off is D8 and D9, showing HC-05 BT Module LED.
 
