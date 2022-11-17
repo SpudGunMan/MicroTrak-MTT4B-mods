@@ -62,6 +62,7 @@ The MTT4BT makes PORT-A available either via (bluetooth OR 2.5mm stereo jack). 2
 The following image shows settings to enable the BT module. Open the device and change jumpers...
 
 ![enable](img/enable-bt.jpg)
+I CHANGED MINE AND LOST A CHIP HOLD:STOP
 
 image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), 
 
