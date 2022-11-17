@@ -15,10 +15,10 @@ Comes with a PP-RTG which a GPS or null modem PC will connect to.
 ## QuickStart
 TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) has the best where to start. This document builds on the little brother [Micro-Trak RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) be sure to review it for foundational not covered here, covers the basics of sensors and Telemetry feeds to aprs.fi. As well as quick starts for setting those parts up. This document will focus more on the TNC aspects and added hardware i/o
 
-if you have the TT-25 and/or TT-USB cables and jump down to [Connecting](#connecting-via-serial) ortherwise skip a section down to [Ports](#ports) to figure out how to connect.
+if you have the TT-25 and/or TT-USB cables and jump down to [Connecting](#connecting-via-serial) otherwise skip a section down to [Ports](#ports) to figure out how to connect.
 
 ### LED Indicators
-On application of 6-12v there is a green and red stand-off LED's which will alternate twice, the red LED is a CPU running watchdog and TX/PTT indicator along with audible relay click, the Yellow is RX traffic. The green is GPS status: blink aquire, locked solid. Additionally with the cover off is D8 and D9, showing HC-05 BT Module LED.
+On application of 6-12v there is a green and red stand-off LED's which will alternate twice, the red LED is a CPU running watchdog and TX/PTT indicator along with audible relay click, the Yellow is RX traffic. The green is GPS status: blink acquire, locked solid. Additionally with the cover off is D8 and D9, showing HC-05 BT Module LED.
 
 ## Documentation
 This device's manuals are a bit thick, as they build from years of the TT4 enhancement add-ons.
@@ -29,7 +29,7 @@ This device's manuals are a bit thick, as they build from years of the TT4 enhan
 
  - not done yet! next up is the extra stuff, the operation of (but otherwise different hardware) the [display](tt4/tt4_display_v1.3.pdf) as well as wire [guide](tt4/tt4_display_wiring.pdf) applied here as well.
 
- - after you consumed all that, dont forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) and & MTT4B [Schematics](doc/MTT4BTv1.7Schematic.pdf) for further details on the parts not covered in the others... whew!
+ - after you consumed all that, don't forget the tt4 hardware [build](tt4/TinyTrak4_Built_Hardware_Manual_v8.pdf) and & MTT4B [Schematics](doc/MTT4BTv1.7Schematic.pdf) for further details on the parts not covered in the others... whew!
 
 # Ports
 
@@ -57,7 +57,7 @@ Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenw
 The MTT4BT makes PORT-A available either via (bluetooth OR 2.5mm stereo jack). 2.5mm jumpers on the MTT4BT PCB board select how PORTA is configured.
 
 - Default jumpers set, PORT-A wired to the ATMEGA, and is identical to the original, non-­bluetooth version of the MTT4B
-- Must change jumpers to change PORTA bnehavior (ATMEGA-serial or BT-serial)
+- Must change jumpers to change PORTA behavior (ATMEGA-serial or BT-serial)
 
 The following image shows settings to enable the BT module. Open the device and change jumpers...
 
@@ -102,7 +102,7 @@ Ground
  - watch out JP9 and JP3 have reversed pin 1 and 2 5v/GND
 
 # Connecting via serial
-Using TerraTerm/Putty/screen you can conect to the TT-25 or the DB9 The TT-25/TT-USB Cable well supported in windows and linux. this document will focus on raspberry pi4 which is quickly adapted to any ubuntu(mint). The reason is development is more approachable in linux vs win 10,11 for most of our work here.
+Using TerraTerm/Putty/screen you can connect to the TT-25 or the DB9 The TT-25/TT-USB Cable well supported in windows and linux. this document will focus on raspberry pi4 which is quickly adapted to any ubuntu(mint). The reason is development is more approachable in linux vs win 10,11 for most of our work here.
 
 To setup AX25 and other packet apps check out my tool [bapi](https://github.com/SpudGunMan/bapi)
 
@@ -180,7 +180,7 @@ The TEST44 is a bench-test ID entered during testing. If you did not request tha
 
 ## Firmware
 Flashing is done via binary mode of a terminal emulator
- - Bootup into `b` boot loader
+ - Boot-up into `b` boot loader
     - press `s` to start binary transfer
     - blink blink .........* finished old school stuff.
 
@@ -258,7 +258,7 @@ There is a tiny set of contacts near the power trimmer pot that can be solder-br
  - https://opensource.com/article/18/3/how-configure-aprs-igate-raspberry-pi
  - https://github.com/trasukg/share-tnc
  - [Micro-TrakRTGFA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
+ - http://www.aprs.org/labsats/labs08/EA467-Telemetry08c.pdf
 
 # Recognition
 Thanks to Rob KB8RCO and Allen AF6OF
-
