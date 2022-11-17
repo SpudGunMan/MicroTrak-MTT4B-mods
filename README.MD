@@ -5,6 +5,8 @@ MTT4BT-FA, This MicroTrak tracker line combines the TinyTrak4 with an internal b
 ![hardware](img/mtt4b.jpg)
 
 ## Cables
+Before powering the unit, I recomend pulling it out and inspecting all solder joints and board work before you play. Pay special attention to the bluetooth module via/headers.
+
 make sure to buy the following cables, in addition to a GPS. (not included but, kinda needed)
 - USB-25mm, and a TT-USB
 
