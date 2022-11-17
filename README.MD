@@ -63,7 +63,9 @@ The following image shows settings to enable the BT module. Open the device and 
 
 ![enable](img/enable-bt.jpg)
 
-image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
+image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), 
+
+also see BT module [config](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) and BT [Connecting](#connecting-bluetooth) details below.
 
 ## HEADER for PS2, LCD
 
@@ -138,7 +140,6 @@ AMODE is KISS
 - [QtTermTCP](https://www.cantab.net/users/john.wiseman/Documents/QtTermTCP.html)
 - any more good ones?? [linpac](https://groups.io/g/KM4ACK-Pi/topic/linpac_for_direwolf_tnc/78591198?p=) needs ax.25 on the to do list
 
-
 kiss2TCP stuff havent tested, any ideas or additions anyone?
 - [TNCAttach](https://github.com/markqvist/tncattach) kissattach without ax stack.
   - `$ sudo tncattach /dev/ttyUSB0 19200 -e --mtu 575 --noipv6 --ipv4 127.0.0.2/8`
@@ -146,13 +147,8 @@ kiss2TCP stuff havent tested, any ideas or additions anyone?
   - `$ share-tnc /dev/ttyUSB0 8000 --baud=19200`
 
 # Connecting Bluetooth
-This section isn't done yet:
+Needed packages on Raspian/Debian on a raspberry pi (default in new installs) `$ sudo apt-get install bluetooth bluez blueman`
 
-Needed packages on Raspian/Debian on a raspberry pi (default in new installs)
-
-```
-sudo apt-get install bluetooth bluez blueman
-```
 On the linux box, navigate to new bluetooth interface in menu bar. Turn MTT4B on with BT module jumpers [enabled](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) and make sure your HC-05 module is blinking red you should see a pair connection named MTT4BT on raspberry pi. Password is 1234
 - Add new device, pair connection named MTT4BT on raspberry pi. 
 - Password is 1234
@@ -187,9 +183,11 @@ Flashing is done via binary mode of a terminal emulator
     - blink blink .........* finished old school stuff.
 
 ## Enable PORTA Configuration to BT-Module
-To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable) change the jumpers to the following..
+To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable) change the jumpers to the following, you will likley need to source 1 "pc"-jumper for this task as not all shipped have 3 jumpers installed.
+
 
 ![btserial](img/bt-serial.jpg)
+CAUTION I DID THIS AND LOST A CHIP STAND:BY
 
 Set up a terminal-emulator at 19200 on your PC, With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
@@ -209,7 +207,7 @@ additionally you can send from linux CLI
 echo -e "AT+UART:19200,1,0\r" | picocom -b 38400 -qrx 1000 /dev/ttyUSB0
 ```
 
-now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
+now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring. And [connect](#connecting-bluetooth)!
 
 ### Partial list of AT command table
 | AT Command | Description |
