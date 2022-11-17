@@ -15,8 +15,11 @@ Comes with a PP-RTG which a GPS or null modem PC will connect to.
 ## QuickStart
 TT4 Quick Start [Guide](tt4/TinyTrak4_Quick_Start_Guide_v0.7.pdf) has the best where to start. This document builds on the little brother [Micro-Trak RTG](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods) be sure to review it for foundational not covered here, covers the basics of sensors and Telemetry feeds to aprs.fi. As well as quick starts for setting those parts up. This document will focus more on the TNC aspects and added hardware i/o
 
+### LED Indicators
+On application of 6-12v there is a green and red stand-off LED's which will alternate twice, the red LED is a CPU running watchdog and TX/PTT indicator along with audible relay click, the Yellow is RX traffic. The green is GPS status: blink aquire, locked solid. Additionally with the cover off is D8 and D9, showing HC-05 BT Module LED.
+
 ## Documentation
-This device's manuals are a bit thicker, as they build from years of the TT4 enhancement add-ons.
+This device's manuals are a bit thick, as they build from years of the TT4 enhancement add-ons.
 
  - The [Manual](doc/MTT4B_Manual_v1.0.pdf) and hardware guide and a list of TNC commands, a [Mini Addendum](doc/MTT4B-Mini_Addendum.pdf) if you have the stamp sized version of the MTT4B. 
 
@@ -71,12 +74,11 @@ Byonics has details you can make your own LCD/Keyboard display [adapter](tt4/tt4
 MTT4B JP9 Header, comes populated just need `IDC 10pin 2x5 Socket 2.54mm, with Ribbon Cable`
  - [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111)
 
-
 The key parameters for the display are:
 |Command|Description|
 | --- | --- |
 NODISP FALSE|NODISP true means there is no display
-TXTDISP TRUE|attached device like a computer or tablet?
+TXTDISP TRUE|unknown
 
 ## Sensor VCC, SIG, GND
 The MTT4B has two built in telemetry channels, one that reports the supply voltage to the unit, another, which reports the temperature inside the unit’s enclosure. Five additional telemetry channels are available for use ( PA3 through PA7 on J3) These inputs are capable of reading 0-5 Volt sensors and reporting the values over the APRS network.
@@ -93,6 +95,53 @@ Ground
 
 ***NOTE: JP9 Header, Byonics suggests avoiding that header for sensor use, used for LCD/PS2***
  - watch out JP9 and JP3 have reversed pin 1 and 2 5v/GND
+
+# Connecting via serial
+Using TerraTerm/Putty/screen you can conect to the TT-25 or the DB9 The TT-25/TT-USB Cable well supported in windows and linux. this document will focus on raspberry pi4 which is quickly adapted to any ubuntu(mint). The reason is development is more approachable in linux vs win 10,11 for most of our work here.
+
+To setup AX25 and other packet apps check out my tool [bapi](https://github.com/SpudGunMan/bapi)
+
+## TNC Options Menu / Text Mode
+Install tools for connection
+- windows [terra-term](https://osdn.net/projects/ttssh2/releases/) or [putty](https://www.putty.org)
+  - Will be a COM port, cool for windows [serial](https://www.uwe-sieber.de/ComPortMan_e.html)
+- debian linux `$ sudo apt-get install screen`
+  - optionaly `$ sudo apt-get install putty` if you need more of a GUI serial emulator
+
+linux kernel TT-25 cable will show up as 
+`/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0`
+
+using screen: `$ screen /dev/ttyUSB0 19200`
+- to [exit](https://www.gnu.org/software/screen/manual/screen.html#Detach) screen Ctrl-a d (or) Ctrl-a Ctrl-d
+- to re-attach `$ screen -r`
+
+to exit KISS for example..
+- apply power
+- press ESC three times and you have a common TNC: prompt `AMODE TEXT`
+
+## TNC KISS mode
+apply power
+press ESC three times and you have a common TNC: prompt you can flip to KISS mode with `AMODE KISS`
+```
+:AMODE KISS
+AMODE was TEXT
+AMODE is KISS
+:QUIT
+```
+
+### APRS Software
+- [XAStir](https://xastir.org/index.php/Main_Page)
+  - ![xastir](img/xastir.jpg)
+### Packet Radio Terminal
+- [QtTermTCP](https://www.cantab.net/users/john.wiseman/Documents/QtTermTCP.html)
+- any more good ones?? [linpac](https://groups.io/g/KM4ACK-Pi/topic/linpac_for_direwolf_tnc/78591198?p=) needs ax.25 on the to do list
+
+
+kiss2TCP stuff havent tested, any ideas or additions anyone?
+- [TNCAttach](https://github.com/markqvist/tncattach) kissattach without ax stack.
+  - `$ sudo tncattach /dev/ttyUSB0 19200 -e --mtu 575 --noipv6 --ipv4 127.0.0.2/8`
+- [ShareTNC](https://github.com/trasukg/share-tnc)
+  - `$ share-tnc /dev/ttyUSB0 8000 --baud=19200`
 
 # Connecting Bluetooth
 This section isn't done yet:
@@ -113,6 +162,8 @@ Should see a serial port which you can connect with TNC applications, depending 
 Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
 
 # Software
+Need to improve add a full table:
+
 The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) which has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
  - TXFREQ 144.390
  - RXFREQ 144.390
@@ -200,6 +251,7 @@ There is a tiny set of contacts near the power trimmer pot that can be solder-br
 
 
 # References
+ - K7MHI linux software installer https://github.com/SpudGunMan/bapi
  - http://aprs.org/satt4.html
  - https://opensource.com/article/18/3/how-configure-aprs-igate-raspberry-pi
  - https://github.com/trasukg/share-tnc
