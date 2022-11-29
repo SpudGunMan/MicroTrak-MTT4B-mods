@@ -153,17 +153,55 @@ kiss2TCP stuff havent tested, any ideas or additions anyone?
   - `$ share-tnc /dev/ttyUSB0 8000 --baud=19200`
 
 # Connecting Bluetooth
-Needed packages on Raspian/Debian on a raspberry pi (default in new installs) `$ sudo apt-get install bluetooth bluez blueman`
+To Connect in windows is assumably easy, it attaches as a Serial Device at least in the win7-10, but the lower level chip isnt as easy in linux land.
 
-On the linux box, navigate to new bluetooth interface in menu bar. Turn MTT4B on with BT module jumpers [enabled](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) and make sure your HC-05 module is blinking red you should see a pair connection named MTT4BT on raspberry pi. Password is 1234
+Needed packages on a raspberry pi (default in new installs so typically skip)
+- `$ sudo apt install -y pi-bluetooth bluetooth bluez picocom blueman`
+
+Non pi-installs which also likley can skip..
+- `$ sudo apt install -y bluetooth bluez picocom blueman`
+
+On a linux box, navigate to new bluetooth interface, in menu bar, and use that to pair and connect. 
+Alternatively from the cli
+```
+$ sudo bluetoothctl
+
+# agent on
+# scan on
+```
+Power up MTT4B with BT module jumpers [enabled](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) and make sure D8 is blinking red
 - Add new device, pair connection named MTT4BT on raspberry pi. 
 - Password is 1234
 
 If you see device, HC-05 the module may need programming see [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
 
+The following shows my address yours will start with the same 78:D8 and help locating the device, which should also be in the -50 or better for signal strength.
+
+Remember use ***your*** address with the `pair` and `trust` commands, `connect` will attach, and fail due to `ServicesResolved: no` which a `$ sdptool browse` will show you a very sad empty list, ahh for an RFCOMM, sigh.
+
+```
+# pair 78:D8:FF:00:2F:55
+# trust 78:D8:FF:00:2F:55
+# connect 78:D8:FF:00:2F:55
+# exit
+```
+You may or may not, have a serial device, depending on your setup. Pi's however need more encouragment.
+```
+$ sudo rfcomm connect /dev/rfcomm0 78:D8:FF:00:2F:55 1
+```
+
 Should see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC.
 
 Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
+
+
+
+Other methods
+
+```
+$ sudo rfcomm bind rfcomm0 78:D8:FF:00:2F:55 1
+$ sudo sdptool add sp
+```
 
 # Software
 Need to improve add a full table:
