@@ -52,7 +52,7 @@ Be sure to pick up a, not included, Byonics USB-25mm cable, which is also a kenw
   - This can be done via the TT-USB cable connected to PORT-B
   - PP-RTG cable via PORT-B 12v, Don't blow up your transceiver, use a RF load dummy; whenever using direct 12 Volt power
 - Official documentation states flash firmware with 2.5mm port
-  - additionally needed for to access the BT module serial port.
+  - additionally needed for to access the BT module serial port for configuration access.
 
 ## PORT A, Bluetooth
 
@@ -64,9 +64,9 @@ The MTT4BT makes PORT-A available either via (bluetooth OR 2.5mm stereo jack). 2
 The following image shows settings to enable the BT module. Open the device and change jumpers...
 
 ![enable](img/enable-bt.jpg)
-I CHANGED MINE AND LOST A CHIP HOLD:STOP
 
 image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), 
+- ***NOTE*** I have expeorenced failures of the MAX232 Chip and recomend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers.
 
 also see BT module [config](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) and BT [Connecting](#connecting-bluetooth) details below.
 
@@ -76,10 +76,16 @@ Byonics has details you can make your own LCD/Keyboard display [adapter](tt4/tt4
  - Recommend a "real" ps/2 keyboard. 
  - uses serial data for LCD not I2C, make sure to have removable I2C daughterboard.
 
- ![jp9](img/jp9.jpg)
+ ![lcdpcb](img/LCD-PCB.jpg)
+
+|MTT4BT JP9 Header|MTT4BT JP9 Header|
+| --- | --- |
+ ![jp9](img/jp9.jpg)|![jp91](img/LCD-Header.jpg)
+
+![lcd-scat](img/LCD-Scat.jpg)
 
 MTT4B JP9 Header, comes populated just need `IDC 10pin 2x5 Socket 2.54mm, with Ribbon Cable`
- - [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111)
+ - example on [digikey](https://www.digikey.com/en/products/detail/cw-industries/C3AAS-1036G/1123111)
 
 The key parameters for the display are:
 |Command|Description|
