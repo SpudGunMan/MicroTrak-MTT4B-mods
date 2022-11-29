@@ -184,17 +184,15 @@ Remember use ***your*** address with the `pair` and `trust` commands, `connect` 
 # exit
 ```
 You may or may not, have a serial device, depending on your setup. Pi's however need more encouragment.
+
 ```
 $ sudo rfcomm connect /dev/rfcomm0 78:D8:FF:00:2F:55 1
 ```
+Should see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC. for example running `$ screen /dev/rfcomm0 38400` 
 
-Should see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC.
+you should see the escape and `: ` tnc shell, It may be possible that the baud rate is 19200 or 9600, or 4800
 
-Example, Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
-
-
-
-Other methods
+Other methods to setup port if still stuck.
 
 ```
 $ sudo rfcomm bind rfcomm0 78:D8:FF:00:2F:55 1
@@ -210,9 +208,9 @@ The TNC commands available in the MTT4B are largely identical to the [commands](
 
 After you have made any changes, you can either type “quit”, recycle power, or push the reset button on the PC board inside the unit. Your changes will now be in effect.
 
-Device runs at 19200baud
+Device runs at 19200baud typically. 
 
-The TEST44 is a bench-test ID entered during testing. If you did not request that Byon program your MTT4BT prior to shipping, it has that test callsign or the default NOCALL entered as callsigns entered in the main bank. 
+The TEST44 is a bench-test ID entered during testing Also Seen TEST22. If you did not request that Byon program your MTT4BT prior to shipping, it has that test callsign or the default NOCALL entered as callsigns entered in the main bank. 
 
  - The binary config [software](bin/TinyTrak4Config/TinyTrak4AlphaConfigv0.68.exe) is inside the Firmware v0.68.zip
  - Additionally you can just program like a classic TNC via text
@@ -301,6 +299,7 @@ There is a tiny set of contacts near the power trimmer pot that can be solder-br
  - https://github.com/trasukg/share-tnc
  - [Micro-TrakRTGFA](https://github.com/SpudGunMan/Micro-TrakRTGFA-mods)
  - http://www.aprs.org/labsats/labs08/EA467-Telemetry08c.pdf
+ - Share TNC KISS via TCP, https://github.com/trasukg/share-tnc
 
 # Recognition
 Thanks to Rob KB8RCO and Allen AF6OF
