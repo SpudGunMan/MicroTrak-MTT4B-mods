@@ -219,6 +219,8 @@ The TEST44 is a bench-test ID entered during testing. If you did not request tha
    - config save files are just variable dump
 
 ## Firmware
+Shipped on Byonics MTT4B Alpha v0.73 (1284) there is no download for this code and no other reference to it.
+
 Flashing is done via binary mode of a terminal emulator
  - Boot-up into `b` boot loader
     - press `s` to start binary transfer
