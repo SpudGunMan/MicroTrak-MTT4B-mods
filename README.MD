@@ -106,11 +106,14 @@ VCC +5
 Ground
 - J3 Pin 1
 
+You can switch between banks in the MTT4BT just as in the regular TT4. This is accomplished by connecting a SPST switch between PA-3 and ground. You have to set BNKMODE to 1 in the configuration to allow the switch to be noticed. 
+
 ***NOTE: JP9 Header, Byonics suggests avoiding that header for sensor use, used for LCD/PS2***
+ - also recomended, not to use GPS 5V
  - watch out JP9 and JP3 have reversed pin 1 and 2 5v/GND
 
 # Connecting via serial
-Using TerraTerm/Putty/screen you can connect to the TT-25 or the DB9 The TT-25/TT-USB Cable well supported in windows and linux. this document will focus on raspberry pi4 which is quickly adapted to any ubuntu(mint). The reason is development is more approachable in linux vs win 10,11 for most of our work here.
+Using TerraTerm/Putty/coolterm/screen you can connect to the TT-25 or the DB9 The TT-25/TT-USB Cable supported in windows(7-10) and linux. This document will focus on raspberry pi4 which is quickly adapted to any ubuntu(mint). The reason is development is more approachable in linux vs win 10,11 for most of our work here.
 
 To setup AX25 and other packet apps check out my tool [bapi](https://github.com/SpudGunMan/bapi)
 
@@ -120,6 +123,7 @@ Install tools for connection
   - Will be a COM port, cool for windows [serial](https://www.uwe-sieber.de/ComPortMan_e.html)
 - debian linux `$ sudo apt-get install screen`
   - optionally `$ sudo apt-get install putty` if you need more of a GUI serial emulator
+- Apple/OSX [coolterm](http://freeware.the-meiers.org)
 
 linux kernel TT-25 cable will show up as 
 `/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0`
@@ -148,7 +152,6 @@ AMODE is KISS
   - ![xastir](img/xastir.jpg)
 ### Packet Radio Terminal
 - [QtTermTCP](https://www.cantab.net/users/john.wiseman/Documents/QtTermTCP.html)
-- any more good ones?? [linpac](https://groups.io/g/KM4ACK-Pi/topic/linpac_for_direwolf_tnc/78591198?p=) needs ax.25 on the to do list
 
 kiss2TCP stuff haven't tested, any ideas or additions anyone?
 - [TNCAttach](https://github.com/markqvist/tncattach) kissattach without ax stack.
@@ -157,7 +160,7 @@ kiss2TCP stuff haven't tested, any ideas or additions anyone?
   - `$ share-tnc /dev/ttyUSB0 8000 --baud=19200`
 
 # Connecting Bluetooth
-To Connect in windows is assumably easy, it attaches as a Serial Device at least in the win7-10, but the lower level chip isnt as easy in linux land.
+Examples shown to connect to Raspberry Pi, the device isnt brodcasting a serial port so getting functionality with windows,AppleOSX could be different or have issues. 
 
 Needed packages on a raspberry pi (default in new installs so typically skip)
 - `$ sudo apt install -y pi-bluetooth bluetooth bluez picocom blueman`
@@ -165,8 +168,9 @@ Needed packages on a raspberry pi (default in new installs so typically skip)
 Non pi-installs which also likely can skip..
 - `$ sudo apt install -y bluetooth bluez picocom blueman`
 
-On a linux box, navigate to new bluetooth interface, in menu bar, and use that to pair and connect. 
-Alternatively from the cli
+On a linux box or windows and osx, navigate to new bluetooth interface, in menu bar, and use that to pair and connect. 
+
+Alternatively from the cli on raspberry
 ```
 $ sudo bluetoothctl
 
@@ -181,7 +185,9 @@ If you see device, HC-05 the module may need programming see [more](https://gith
 
 The following shows my address yours will start with the same 78:D8 and help locating the device, which should also be in the -50 or better for signal strength.
 
-Remember use ***your*** address with the `pair` and `trust` commands, `connect` will attach, and fail due to `ServicesResolved: no` which a `$ sdptool browse` will show you a very sad empty list, ahh for an RFCOMM, sigh.
+Remember use ***your*** address with the `pair` and `trust` commands, `connect` 
+
+connect might fail, and fail due to `ServicesResolved: no` which a `$ sdptool browse` will show you a very sad empty list.
 
 ```
 # pair 78:D8:FF:00:2F:55
@@ -194,9 +200,10 @@ You may or may not, have a serial device, depending on your setup. Pi's however 
 ```
 $ sudo rfcomm connect /dev/rfcomm0 78:D8:FF:00:2F:55 1
 ```
-Should see a serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC. for example running `$ screen /dev/rfcomm0 38400` 
 
-you should see the escape and `: ` tnc shell, It may be possible that the baud rate is 19200 or 9600, or 4800
+Should allow access to the serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC. for example running `$ screen /dev/rfcomm0 38400` 
+
+you should see the escape and `: ` tnc shell, It may be possible that the baud rate is 19200 or 9600, or 4800 mine was shipped at 38400 not the 19200 as documented.
 
 Other methods to setup port if still stuck.
 
@@ -204,13 +211,14 @@ Other methods to setup port if still stuck.
 $ sudo rfcomm bind rfcomm0 78:D8:FF:00:2F:55 1
 $ sudo sdptool add sp
 ```
+This will bind the port without having the connect open but also has less visual notice something has failed or not connected.
 
 # Software
-Need to improve add a full table:
-
 The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) which has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
  - TXFREQ 144.390
  - RXFREQ 144.390
+
+You can switch between banks in the MTT4BT just as in the regular TT4. This is accomplished by connecting a SPST switch between PA-3 and ground. You have to set BNKMODE to 1 in the configuration to allow the switch to be noticed. One other very easy way to switch between banks is to use a Byonics Display-PS/2 adapter. By using the F5 feature, you can change a lot ( Not all) of the configuration parameters using the display and PS/2 keyboard.
 
 After you have made any changes, you can either type “quit”, recycle power, or push the reset button on the PC board inside the unit. Your changes will now be in effect.
 
@@ -223,7 +231,7 @@ The TEST44 is a bench-test ID entered during testing Also Seen TEST22. If you di
    - config save files are just variable dump
 
 ## Firmware
-Shipped on Byonics MTT4B Alpha v0.73 (1284) there is no download for this code and no other reference to it.
+Shipped on Byonics MTT4B Alpha v0.73 (1284) [firmware](bin/MTT4B_0.73_1284.TT4) ***DO NOT put this on any device but MTT4B.***
 
 Flashing is done via binary mode of a terminal emulator
  - Boot-up into `b` boot loader
@@ -235,7 +243,7 @@ To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable
 
 
 ![btserial](img/bt-serial.jpg)
-CAUTION I DID THIS AND LOST A CHIP STAND:BY
+- ***NOTE*** I have experienced failures of the MAX232 Chip and recommend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers.
 
 Set up a terminal-emulator at 19200 on your PC, With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
 
@@ -257,7 +265,7 @@ echo -e "AT+UART:19200,1,0\r" | picocom -b 38400 -qrx 1000 /dev/ttyUSB0
 
 now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring. And [connect](#connecting-bluetooth)!
 
-### Partial list of AT command table
+### Partial list of HC-05 AT command table
 | AT Command | Description |
 | --- | --- |
 |`AT+ORGL`|Slave mode, pin code :1234, device name: H-C-2010-06-01 ,Baud 38400
