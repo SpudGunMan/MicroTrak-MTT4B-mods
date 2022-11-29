@@ -5,7 +5,7 @@ MTT4BT-FA, This MicroTrak tracker line combines the TinyTrak4 with an internal b
 ![hardware](img/mtt4b.jpg)
 
 ## Cables
-Before powering the unit, I recomend pulling it out and inspecting all solder joints and board work before you play. Pay special attention to the bluetooth module via/headers.
+Before powering the unit, I recommend pulling it out and inspecting all solder joints, proper DIP orientation, and board work before you play. Pay special attention to the bluetooth module via/headers.
 
 make sure to buy the following cables, in addition to a GPS. (not included but, kinda needed)
 - USB-25mm, and a TT-USB
@@ -66,7 +66,7 @@ The following image shows settings to enable the BT module. Open the device and 
 ![enable](img/enable-bt.jpg)
 
 image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), 
-- ***NOTE*** I have expeorenced failures of the MAX232 Chip and recomend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers.
+- ***NOTE*** I have experienced failures of the MAX232 Chip and recommend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers.
 
 also see BT module [config](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) and BT [Connecting](#connecting-bluetooth) details below.
 
@@ -98,7 +98,7 @@ The MTT4B has two built in telemetry channels, one that reports the supply volta
 
 ![jp3](img/jp3.jpg)
 
-JP3 Sensor Header, comes unpopulated, so you will need to add 2.5mm header pin's, included is 2.2k protection on each line.
+JP3 Sensor Header, comes unpopulated, so you will need to add 2.5mm header pin's, included is 2.2k protection on each line. recommend getting a `Single Row 2.54mm Pitch 7 Pin Straight Female Header Socket` which you can use a drill bit to port out a hole in the case for easy access.
 
 VCC +5
 - J3 Pin 2
@@ -119,7 +119,7 @@ Install tools for connection
 - windows [terra-term](https://osdn.net/projects/ttssh2/releases/) or [putty](https://www.putty.org)
   - Will be a COM port, cool for windows [serial](https://www.uwe-sieber.de/ComPortMan_e.html)
 - debian linux `$ sudo apt-get install screen`
-  - optionaly `$ sudo apt-get install putty` if you need more of a GUI serial emulator
+  - optionally `$ sudo apt-get install putty` if you need more of a GUI serial emulator
 
 linux kernel TT-25 cable will show up as 
 `/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0`
@@ -150,7 +150,7 @@ AMODE is KISS
 - [QtTermTCP](https://www.cantab.net/users/john.wiseman/Documents/QtTermTCP.html)
 - any more good ones?? [linpac](https://groups.io/g/KM4ACK-Pi/topic/linpac_for_direwolf_tnc/78591198?p=) needs ax.25 on the to do list
 
-kiss2TCP stuff havent tested, any ideas or additions anyone?
+kiss2TCP stuff haven't tested, any ideas or additions anyone?
 - [TNCAttach](https://github.com/markqvist/tncattach) kissattach without ax stack.
   - `$ sudo tncattach /dev/ttyUSB0 19200 -e --mtu 575 --noipv6 --ipv4 127.0.0.2/8`
 - [ShareTNC](https://github.com/trasukg/share-tnc)
@@ -162,7 +162,7 @@ To Connect in windows is assumably easy, it attaches as a Serial Device at least
 Needed packages on a raspberry pi (default in new installs so typically skip)
 - `$ sudo apt install -y pi-bluetooth bluetooth bluez picocom blueman`
 
-Non pi-installs which also likley can skip..
+Non pi-installs which also likely can skip..
 - `$ sudo apt install -y bluetooth bluez picocom blueman`
 
 On a linux box, navigate to new bluetooth interface, in menu bar, and use that to pair and connect. 
@@ -189,7 +189,7 @@ Remember use ***your*** address with the `pair` and `trust` commands, `connect` 
 # connect 78:D8:FF:00:2F:55
 # exit
 ```
-You may or may not, have a serial device, depending on your setup. Pi's however need more encouragment.
+You may or may not, have a serial device, depending on your setup. Pi's however need more encouragement.
 
 ```
 $ sudo rfcomm connect /dev/rfcomm0 78:D8:FF:00:2F:55 1
