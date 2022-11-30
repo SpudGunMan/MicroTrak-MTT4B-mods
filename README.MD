@@ -66,7 +66,7 @@ The following image shows settings to enable the BT module. Open the device and 
 ![enable](img/enable-bt.jpg)
 
 image shows settings to enable BT module as PORT-A detailed in the [addendum](doc/MTT4BT_Manual_Addendum.pdf), 
-- ***NOTE*** I have experienced failures of the MAX232 Chip and recommend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers.
+- ***NOTE*** I have experienced failures of the MAX232 Chip and recommend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers. or pugging the 2.5mm jack.
 
 also see BT module [config](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) and BT [Connecting](#connecting-bluetooth) details below.
 
@@ -91,7 +91,7 @@ The key parameters for the display are:
 |Command|Description|
 | --- | --- |
 NODISP FALSE|NODISP true means there is no display
-TXTDISP TRUE|unknown
+TXTDISP TRUE|Set to display sent incoming serial text
 
 ## Sensor VCC, SIG, GND
 The MTT4B has two built in telemetry channels, one that reports the supply voltage to the unit, another, which reports the temperature inside the unit’s enclosure. Five additional telemetry channels are available for use ( PA3 through PA7 on J3) These inputs are capable of reading 0-5 Volt sensors and reporting the values over the APRS network.
@@ -109,7 +109,7 @@ Ground
 You can switch between banks in the MTT4BT just as in the regular TT4. This is accomplished by connecting a SPST switch between PA-3 and ground. You have to set BNKMODE to 1 in the configuration to allow the switch to be noticed. 
 
 ***NOTE: JP9 Header, Byonics suggests avoiding that header for sensor use, used for LCD/PS2***
- - also recomended, not to use GPS 5V
+ - also recommended, not to use GPS 5V
  - watch out JP9 and JP3 have reversed pin 1 and 2 5v/GND
 
 # Connecting via serial
@@ -123,7 +123,7 @@ Install tools for connection
   - Will be a COM port, cool for windows [serial](https://www.uwe-sieber.de/ComPortMan_e.html)
 - debian linux `$ sudo apt-get install screen`
   - optionally `$ sudo apt-get install putty` if you need more of a GUI serial emulator
-- Apple/OSX [coolterm](http://freeware.the-meiers.org)
+- Apple/OSX/Linux [coolterm](http://freeware.the-meiers.org)
 
 linux kernel TT-25 cable will show up as 
 `/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0`
@@ -160,7 +160,7 @@ kiss2TCP stuff haven't tested, any ideas or additions anyone?
   - `$ share-tnc /dev/ttyUSB0 8000 --baud=19200`
 
 # Connecting Bluetooth
-Examples shown to connect to Raspberry Pi, the device isnt brodcasting a serial port so getting functionality with windows,AppleOSX could be different or have issues. 
+Examples shown to connect to Raspberry Pi, the device isn't broadcasting a serial port so getting functionality with windows, AppleOSX could be different or have issues. 
 
 Needed packages on a raspberry pi (default in new installs so typically skip)
 - `$ sudo apt install -y pi-bluetooth bluetooth bluez picocom blueman`
@@ -168,9 +168,7 @@ Needed packages on a raspberry pi (default in new installs so typically skip)
 Non pi-installs which also likely can skip..
 - `$ sudo apt install -y bluetooth bluez picocom blueman`
 
-On a linux box or windows and osx, navigate to new bluetooth interface, in menu bar, and use that to pair and connect. 
-
-Alternatively from the cli on raspberry
+On a linux box or windows and osx, navigate to new bluetooth interface, in menu bar, and use that to pair and connect. Alternatively from the cli on raspberry
 ```
 $ sudo bluetoothctl
 
@@ -181,11 +179,11 @@ Power up MTT4B with BT module jumpers [enabled](https://github.com/SpudGunMan/Mi
 - Add new device, pair connection named MTT4BT on raspberry pi. 
 - Password is 1234
 
-If you see device, HC-05 the module may need programming see [more](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#enable-porta-configuration-to-bt-module) details below.
+If you see device, HC-05 the module may need programming see [more](HC-05.MD) details.
 
 The following shows my address yours will start with the same 78:D8 and help locating the device, which should also be in the -50 or better for signal strength.
 
-Remember use ***your*** address with the `pair` and `trust` commands, `connect` 
+Remember use ***your*** MAC address with the `pair` and `trust` commands, `connect` 
 
 connect might fail, and fail due to `ServicesResolved: no` which a `$ sdptool browse` will show you a very sad empty list.
 
@@ -200,21 +198,19 @@ You may or may not, have a serial device, depending on your setup. Pi's however 
 ```
 $ sudo rfcomm connect /dev/rfcomm0 78:D8:FF:00:2F:55 1
 ```
+Should allow access to the serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC. for example running `$ screen /dev/rfcomm0 19200` 
 
-Should allow access to the serial port which you can connect with TNC applications, depending on the mode of PORTA (KISS or TEXT) you can now access your TNC. for example running `$ screen /dev/rfcomm0 38400` 
+you should see the escape and `: ` tnc shell, It may be possible that the baud rate is not 19200 but, 38400 or 9600, or 4800. 
+- ***However first try*** pressing the SW1 on the main board to reset the ATMEGA. Chances are this step is needed to get data flowing into your terminal. 
 
-you should see the escape and `: ` tnc shell, It may be possible that the baud rate is 19200 or 9600, or 4800 mine was shipped at 38400 not the 19200 as documented.
-
-Other methods to setup port if still stuck.
-
+Alternate commands for adding serial port
 ```
 $ sudo rfcomm bind rfcomm0 78:D8:FF:00:2F:55 1
 $ sudo sdptool add sp
 ```
-This will bind the port without having the connect open but also has less visual notice something has failed or not connected.
 
 # Software
-The TNC commands available in the MTT4B are largely identical to the [commands](doc/MTT4B_Manual_v1.0.pdf) in the standard tt4 firmware [manual](tt4/TinyTrak4_Alpha_Firmware_Manual_v0.72.pdf) which has more detailed commands. One major difference is that the transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
+A full list of [commands](TNC-Commands.MD) mostly identical to the TT4 with some new commands, transmit and receive frequency are set in software, and by default are both on 144.390 MHZ. You can have a split frequency or a simplex frequency without problems. To set the frequency from the command line of the TNC (text mode)
  - TXFREQ 144.390
  - RXFREQ 144.390
 
@@ -231,80 +227,17 @@ The TEST44 is a bench-test ID entered during testing Also Seen TEST22. If you di
    - config save files are just variable dump
 
 ## Firmware
-Shipped on Byonics MTT4B Alpha v0.73 (1284) [firmware](bin/MTT4B_0.73_1284.TT4) ***DO NOT put this on any device but MTT4B.***
+Shipped on Byonics MTT4B Alpha v0.73 (1284) [firmware](bin/MTT4B_0.73_1284.TT4) ***DO NOT put this on any device but MTT4B***
 
-Flashing is done via binary mode of a terminal emulator
+Flashing is done via binary mode of a terminal emulator using the 2.5mm jack.
  - Boot-up into `b` boot loader
     - press `s` to start binary transfer
     - blink blink .........* finished old school stuff.
 
-## Enable PORTA Configuration to BT-Module
-To change any settings on the BT [module](doc/HC05BT.pdf) (using the 2.5mm cable) change the jumpers to the following, you will likley need to source 1 "pc"-jumper for this task as not all shipped have 3 jumpers installed.
-
-
-![btserial](img/bt-serial.jpg)
-- ***NOTE*** I have experienced failures of the MAX232 Chip and recommend having spares for this hardware its on a DIP socket for a reason. Be cautious to use ESD protection and make sure power is not connected when modifying these jumpers.
-
-Set up a terminal-emulator at 19200 on your PC, With MTT4BT power off, remove the J7 jumper shunt, power the MTT4BT, then place the J7 jumper shunt on the J7 header pins. 
-
-In the terminal-emulator console enter `​AT` and press enter, and the module should respond with `O​K` ​If it does not, check that the terminal is sending CR/LF when enter is pressed. It may be possible that the baud rate is 38400 or 9600, or 4800 so also try those if you don't connect.
-
-You can copy and paste the following, full block to "reset" your module to Byonics default config. Paste into your terminal-emulator. if you really mess up `AT+ORGL` will reset to 38400 baud and then past the following..
-
-```
-AT+NAME=MTT4BT
-AT+PSWD=1234
-AT+ADDR?
-AT+UART:19200,1,0
-```
-
-additionally you can send from linux CLI
-```
-echo -e "AT+UART:19200,1,0\r" | picocom -b 38400 -qrx 1000 /dev/ttyUSB0
-```
-
-now, return to normal mode, remove J7 jumper shunt reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring. And [connect](#connecting-bluetooth)!
-
-### Partial list of HC-05 AT command table
-| AT Command | Description |
-| --- | --- |
-|`AT+ORGL`|Slave mode, pin code :1234, device name: H-C-2010-06-01 ,Baud 38400
-|`AT+UART?`|Read the current serial configuration
-|`AT+UART:19200,1,0`|Set the serial configuration to 19200 baud, 1 stop bit, no parity
-|`AT+NAME?`|Read the current device name
-|`AT+PSWD?`|Read the current connection PIN/password
-|`AT+RESET`|Reset
-|`AT+VERSION?`|Version information
-|`AT+ADDR?`|Bluetooth address: NAP: UAP : LAP
-|`AT+ROLE?`|Check module mode, set with `AT+ROLE=` 0-slave 1-master 2-slaveloop
-|`AT+CLASS?`|Check device class set with `AT+CLASS=`
-|`AT+INQM?`|Check Query access patterns
-|`AT+CMODE`|Check connect mode set with `AT+CMODE=` 0-connect fixed 1-connect any
-|`AT+BIND?`|Check fixed address set with `AT+BIND=` 00:00:00:00:00:00
-|`AT+IPSCAN?`|Check scan parameter
-|`AT+SNIFF?`|Check SNIFF parameter
-|`AT+RMAAD`|Delete All Authenticated Device
-|`AT+ADCN?`|Get Authenticated Device Count
-|`AT+MRAD?`|Most Recently Used Authenticated Device
-|`AT+STATE?`|Get the module working state
-
-remember to return to normal mode, reset to the shown [BT-PORTA](https://github.com/SpudGunMan/MicroTrak-MTT4B-mods#port-a-bluetooth) mode after configuring.
-
-# Hardware mods
-the following is all untested.
-
-I noticed on my new in box unit on inspection that the PCB had thermal discoloring from the RF power driver. I added a thermal tape and a passive cooling fins. this is untested and currently should be of note this might have reverse and negative effects!
-
-![cooling](img/cooling.jpg)
-
-this is untested and currently should be of note this might have reverse and negative effects! (SWR and therm)
-
-
 ### Hi Power mod
-a higher power RF chip can be used[ra30h1317m](https://www.mitsubishielectric-mesh.com/products/pdf/ra30h1317m.pdf)
+A higher power RF chip can be used [ra30h1317m](https://www.mitsubishielectric-mesh.com/products/pdf/ra30h1317m.pdf)
 
-There is a tiny set of contacts near the power trimmer pot that can be solder-bridged to provide the higher gate Voltage the the higher power amplifiers require.
-
+There is a tiny set of contacts, Solder Bridge J4, near the power trimmer pot. To provide the higher gate Voltage the the higher power amplifiers require.
 
 # References
  - K7MHI linux software installer https://github.com/SpudGunMan/bapi
