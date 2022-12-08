@@ -93,6 +93,14 @@ The key parameters for the display are:
 NODISP FALSE|NODISP true means there is no display
 TXTDISP TRUE|Set to display sent incoming serial text
 
+You will need a Gen1 PS2- Keyboard to interact.
+- F1= Help
+- F2=raw display
+- F3=waiting messages?
+- F4=new message
+- F5=configuration
+- F6=UI terminal (was mentioned its not functioning on groups.io)
+
 ## Sensor VCC, SIG, GND
 The MTT4B has two built in telemetry channels, one that reports the supply voltage to the unit, another, which reports the temperature inside the unit’s enclosure. Five additional telemetry channels are available for use ( PA3 through PA7 on J3) These inputs are capable of reading 0-5 Volt sensors and reporting the values over the APRS network.
 
@@ -203,8 +211,9 @@ Should allow access to the serial port which you can connect with TNC applicatio
 you should see the escape and `: ` tnc shell, It may be possible that the baud rate is not 19200 but, 38400 or 9600, or 4800. 
 - ***However first try*** pressing the SW1 on the main board to reset the ATMEGA. Chances are this step is needed to get data flowing into your terminal. 
 
-Alternate commands for adding serial port
+Additional usefull commands for adding serial port
 ```
+$ sudo chmod a+rw /dev/rfcomm0
 $ sudo rfcomm bind rfcomm0 78:D8:FF:00:2F:55 1
 $ sudo sdptool add sp
 ```
